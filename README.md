@@ -1,6 +1,6 @@
 # Burs ve Yurt Takvimi
 
-Türk üniversite öğrencileri için yerel bir MCP sunucusu. Claude, KYK burs ve kredi başvuruları, yurt, VGM, ÖSYM, AÖF, Erasmus+ ve geçiş duyurularını aynı takvimden sorgulayabilir. Kayıtlar kaynak adresini, kontrol tarihini ve doğrulama durumunu taşır.
+Türk üniversite öğrencileri için yerel bir MCP sunucusu. Claude, KYK burs ve kredi başvuruları, yurt, VGM, ÖSYM, AÖF, Erasmus+, geçiş, Ulusal Staj Programı ve TÜBİTAK 2209-A duyurularını aynı takvimden sorgulayabilir. Kayıtlar kaynak adresini, kontrol tarihini ve doğrulama durumunu taşır.
 
 ## Tarayıcıda kullan
 
@@ -80,7 +80,7 @@ MCP istemcisi `takvim://tum` kaynağından doğrulamadan geçen tüm kayıtları
 `burs_takvimi/data/takvim.json` dosyasının üst düzeyinde `version: 1`, `updated` ve `entries` bulunur. Başka bir dosyayı kullanmak için sunucunun ortamında `BURS_TAKVIMI_DATA` değişkenine dosyanın mutlak yolunu ver.
 
 1. `entries` listesine benzersiz ve kalıcı bir `id` ile kayıt ekle. `baslik` ve `kurum` alanlarını doldur.
-2. `kategori` için `kyk-burs`, `kyk-yurt`, `vgm`, `osym`, `aof`, `erasmus`, `gecis` veya `diger` kullan. `ogrenim` listesine uygun düzeyleri ekle. Geçerli değerler `onlisans`, `lisans`, `yuksek-lisans`, `doktora` ve `hepsi`.
+2. `kategori` için `kyk-burs`, `kyk-yurt`, `vgm`, `osym`, `aof`, `erasmus`, `gecis`, `staj` veya `diger` kullan. `ogrenim` listesine uygun düzeyleri ekle. Geçerli değerler `onlisans`, `lisans`, `yuksek-lisans`, `doktora` ve `hepsi`.
 3. `kaynak_url` alanına resmi duyurunun HTTPS bağlantısını, `kontrol_tarihi` alanına duyuruyu incelediğin tarihi yaz. Tarih biçimi `YYYY-MM-DD`. Örnek kayıtlardaki kontrol tarihi, örnek verinin hazırlandığı gündür.
 4. Resmi duyurudan kesinleşen `baslangic` ve `bitis` tarihlerini gir. Bilinmeyen tarihler için `null` kullan. `dogrulandi` alanını yalnızca tarihleri ve kayıt ayrıntılarını resmi duyuruyla karşılaştırdığında `true` yap.
 5. `tekrar` alanı için `yillik` veya `null` kullan. `notlar` alanına başvuru koşullarını ya da duyuruya ilişkin ayrıntıları ekle. `belgeler` alanına duyuruda istenen belgeleri metin listesi olarak yaz. Bilgi yoksa boş liste kullan.

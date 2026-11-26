@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-24",
+  "updated": "2026-11-26",
   "entries": [
     {
       "id": "kyk-burs-kredi",
@@ -246,6 +246,49 @@
       "kontrol_tarihi": "2026-11-24",
       "dogrulandi": false,
       "belgeler": []
+    },
+    {
+      "id": "ulusal-staj-programi",
+      "baslik": "Ulusal Staj Programı öğrenci başvurusu (2027 dönemi)",
+      "kurum": "İŞKUR",
+      "kategori": "staj",
+      "ogrenim": [
+        "onlisans",
+        "lisans"
+      ],
+      "baslangic": "2026-10-26",
+      "bitis": "2026-12-14",
+      "tekrar": "yillik",
+      "kaynak_url": "https://ulusalstajprogrami.iskur.gov.tr/",
+      "kontrol_tarihi": "2026-11-26",
+      "dogrulandi": false,
+      "notlar": "Haberlere göre başvurular 14 Aralık 2026 23.59'da kapanıyor; 1 Ocak 2027 itibarıyla 35 yaşını doldurmamış olmak ve 4 üzerinden en az 2,00 ortalama aranıyor. Program Kariyer Kapısı'ndan İŞKUR'a taşınmış görünüyor. Araştırma bulgusu (2026-11-26); resmi duyurudan henüz doğrulanmadı.",
+      "belgeler": [
+        "e-Devlet girişi",
+        "Güncel transkript (not ortalaması)"
+      ]
+    },
+    {
+      "id": "tubitak-2209-a",
+      "baslik": "TÜBİTAK 2209-A Üniversite Öğrencileri Araştırma Projeleri çağrısı",
+      "kurum": "TÜBİTAK BİDEB",
+      "kategori": "staj",
+      "ogrenim": [
+        "onlisans",
+        "lisans"
+      ],
+      "baslangic": "2026-10-07",
+      "bitis": "2026-11-11",
+      "tekrar": "yillik",
+      "kaynak_url": "https://tubitak.gov.tr/en/announcement/2209-research-project-support-programme-undergraduate-students-and-2209-b-industry-oriented-research-project-support-programme-undergraduate-students-2026-calls-are-open-application",
+      "kontrol_tarihi": "2026-11-26",
+      "dogrulandi": false,
+      "notlar": "2026 çağrısı TÜBİTAK duyurusuna göre 11 Kasım 2026 17.30'da kapandı (bazı üniversiteler uzatma duyurdu); kurum onayı 16-23 Kasım. Danışmanla proje fikrini bir sonraki çağrıdan önce hazırlamaya başla. 2209-B sanayi odaklı sürümdür. Araştırma bulgusu (2026-11-26).",
+      "belgeler": [
+        "Proje önerisi",
+        "Danışman onayı",
+        "Öğrenci belgesi"
+      ]
     }
   ]
 }

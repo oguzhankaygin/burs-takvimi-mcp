@@ -12,6 +12,8 @@ RESMI_KAYNAKLAR = (
     ("Ölçme, Seçme ve Yerleştirme Merkezi", "https://www.osym.gov.tr/"),
     ("Anadolu Üniversitesi Açıköğretim Fakültesi", "https://aof.anadolu.edu.tr/"),
     ("Türkiye Ulusal Ajansı", "https://www.ua.gov.tr/"),
+    ("İŞKUR Ulusal Staj Programı", "https://ulusalstajprogrami.iskur.gov.tr/"),
+    ("TÜBİTAK Bilim İnsanı Destek Programları Başkanlığı", "https://tubitak.gov.tr/"),
 )
 
 

@@ -211,3 +211,12 @@ class SunucuTesti(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class StajKategorisiTesti(unittest.TestCase):
+    def test_gercek_veride_staj_kaydi_yaklasanlarda_gorunur(self):
+        from burs_takvimi.data import takvimi_yukle
+        from burs_takvimi.tools import yaklasan_tarihler
+        from datetime import date
+        sonuc = yaklasan_tarihler(takvimi_yukle()["entries"], date(2026, 11, 26), gun=30, kategori="staj")
+        self.assertEqual([k["id"] for k in sonuc], ["ulusal-staj-programi"])

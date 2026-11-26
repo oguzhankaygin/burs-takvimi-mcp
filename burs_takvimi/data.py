@@ -7,7 +7,7 @@ from pathlib import Path
 from urllib.parse import urlsplit
 import sys
 
-KATEGORILER = ("kyk-burs", "kyk-yurt", "vgm", "osym", "aof", "erasmus", "gecis", "diger")
+KATEGORILER = ("kyk-burs", "kyk-yurt", "vgm", "osym", "aof", "erasmus", "gecis", "staj", "diger")
 OGRENIM = ("onlisans", "lisans", "yuksek-lisans", "doktora", "hepsi")
 VARSAYILAN_VERI = Path(__file__).with_name("data") / "takvim.json"
 ALANLAR = {

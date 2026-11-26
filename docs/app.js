@@ -110,7 +110,7 @@ function kayitIcs(k, guncelleme) {
 
 function claudePrompt(kayitlar) {
   return [
-    "Aşağıdaki burs, yurt ve öğrenim takvimi kayıtlarını Türkçe özetle. Başvuru adımlarını ve önemli tarihleri belirt. Doğrulanmamış tarihleri uyarıyla işaretle ve resmi kaynakları göster.",
+    "Aşağıdaki burs, yurt, staj ve öğrenim takvimi kayıtlarını Türkçe özetle. Başvuru adımlarını ve önemli tarihleri belirt. Doğrulanmamış tarihleri uyarıyla işaretle ve resmi kaynakları göster.",
     ...kayitlar.map(k => `- ${k.baslik} | Başlangıç ${k.baslangic ?? "belirtilmemiş"}, bitiş ${k.bitis ?? "belirtilmemiş"} | ${k.dogrulandi ? "Doğrulandı" : "Doğrulanmadı"} | ${k.kaynak_url}`),
   ].join("\n");
 }
