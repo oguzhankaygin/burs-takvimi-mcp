@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Burs, yurt ve öğrenim başvurularını takip et.">
+  <title>Burs ve Yurt Takvimi</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <p class="uyari">⚠ Tarihler doğrulanmamış olabilir, resmi kaynaktan kontrol edin.</p>
+  <main>
+    <header>
+      <h1>Burs ve Yurt Takvimi</h1>
+      <details>
+        <summary>Tüm takvime abone ol</summary>
+        <p><a id="webcal" href="./takvim.ics">Takvim uygulamasında aç (webcal)</a> ·
+          <a id="https" href="./takvim.ics">HTTPS bağlantısı (.ics)</a></p>
+        <p>Google Takvim’in web sürümünde Diğer takvimler → + → URL ile seçeneğini aç.
+          HTTPS bağlantısının adresini kopyalayıp yapıştır ve Takvim ekle’yi seç.</p>
+      </details>
+    </header>
+    <section class="filtreler" aria-label="Takvim filtreleri">
+      <label>Öğrenim düzeyi <select id="ogrenim">
+        <option value="hepsi">Tüm düzeyler</option>
+        <option value="onlisans">Ön lisans</option>
+        <option value="lisans">Lisans</option>
+        <option value="yuksek-lisans">Yüksek lisans</option>
+        <option value="doktora">Doktora</option>
+      </select></label>
+      <label>Kategori <select id="kategori">
+        <option value="">Tüm kategoriler</option>
+        <option value="kyk-burs">KYK burs ve kredi</option>
+        <option value="kyk-yurt">KYK yurt</option>
+        <option value="vgm">VGM</option>
+        <option value="osym">ÖSYM</option>
+        <option value="aof">AÖF</option>
+        <option value="erasmus">Erasmus+</option>
+        <option value="gecis">Geçiş</option>
+        <option value="diger">Diğer</option>
+      </select></label>
+      <label>Ara <input id="arama" type="search" placeholder="Başlık, kurum veya belge"></label>
+    </section>
+    <div class="sekme" role="tablist" aria-label="Takvim görünümleri">
+      <button type="button" role="tab" id="yaklasan" aria-selected="true" aria-controls="panel">Yaklaşan</button>
+      <button type="button" role="tab" id="tumu" aria-selected="false" aria-controls="panel" tabindex="-1">Tümü</button>
+      <button type="button" role="tab" id="kontrol" aria-selected="false" aria-controls="panel" tabindex="-1">Kontrol listem</button>
+    </div>
+    <section id="panel" role="tabpanel" aria-labelledby="yaklasan" tabindex="0">
+      <fieldset id="profil" hidden>
+        <legend>Kontrol listesi için öğrenci profili</legend>
+        <div class="filtreler">
+          <label>KYK yurdunda kalıyor musun? <select id="yurt">
+            <option value="">Belirtmek istemiyorum</option><option value="evet">Evet</option><option value="hayir">Hayır</option>
+          </select></label>
+          <label>Burs alıyor musun? <select id="burs">
+            <option value="">Belirtmek istemiyorum</option><option value="evet">Evet</option><option value="hayir">Hayır</option>
+          </select></label>
+          <label>Sınıf (isteğe bağlı) <input id="sinif" type="number" min="1" step="1"></label>
+        </div>
+      </fieldset>
+      <p id="durum" role="status">Takvim yükleniyor…</p>
+      <ul id="kayitlar" class="kayitlar"></ul>
+    </section>
+    <button type="button" id="claude" disabled>Claude’a sor</button>
+    <p id="kopya-durum" role="status"></p>
+    <label id="elle-kopya" hidden>Claude'a yapıştırmak için metni kopyala
+      <textarea id="prompt" readonly rows="8"></textarea>
+    </label>
+    <noscript>Takvimi görüntülemek için JavaScript’i etkinleştir. <a href="./takvim.ics">Takvim dosyasını indir</a>.</noscript>
+  </main>
+</body>
+</html>

@@ -1,0 +1,166 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Burs Takvimi//TR
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:kyk-burs-kredi@burs-takvimi
+DTSTAMP:20261124T000000Z
+DTSTART;VALUE=DATE:20261012
+DTEND;VALUE=DATE:20261017
+SUMMARY:⚠ KYK burs ve öğrenim kredisi başvurusu
+DESCRIPTION:2026-2027 başvuruları kapandı\; sonuçların 6 Kasım 2026'd
+ a açıklandığı bildiriliyor. Araştırma bulgusu (2026-11-24)\; resmi 
+ duyurudan henüz doğrulanmadı.\nKaynak: https://kygm.gsb.gov.tr/\nTarihl
+ eri resmi kaynaktan kontrol edin.
+URL:https://kygm.gsb.gov.tr/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=END:-P4D
+DESCRIPTION:⚠ KYK burs ve öğrenim kredisi başvurusu
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:vgm-burs@burs-takvimi
+DTSTAMP:20261124T000000Z
+DTSTART;VALUE=DATE:20261022
+DTEND;VALUE=DATE:20261101
+SUMMARY:⚠ VGM yükseköğrenim bursu başvurusu
+DESCRIPTION:Sonuçların 23 Kasım 2026'da ilan edildiği bildiriliyor. Ara
+ ştırma bulgusu (2026-11-24)\; resmi duyurudan henüz doğrulanmadı.\nKa
+ ynak: https://www.vgm.gov.tr/\nTarihleri resmi kaynaktan kontrol edin.
+URL:https://www.vgm.gov.tr/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=END:-P4D
+DESCRIPTION:⚠ VGM yükseköğrenim bursu başvurusu
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:osym-yks@burs-takvimi
+DTSTAMP:20261124T000000Z
+DTSTART;VALUE=DATE:20270204
+DTEND;VALUE=DATE:20270303
+SUMMARY:⚠ YKS başvurusu
+DESCRIPTION:2027 YKS başvuru dönemi. Araştırma bulgusu (2026-11-24)\; r
+ esmi duyurudan henüz doğrulanmadı.\nKaynak: https://www.osym.gov.tr/\nT
+ arihleri resmi kaynaktan kontrol edin.
+URL:https://www.osym.gov.tr/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=END:-P4D
+DESCRIPTION:⚠ YKS başvurusu
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aof-sinav@burs-takvimi
+DTSTAMP:20261124T000000Z
+DTSTART;VALUE=DATE:20261205
+DTEND;VALUE=DATE:20261207
+SUMMARY:⚠ AÖF dönem sınavı
+DESCRIPTION:AÖF güz ara sınavı. Araştırma bulgusu (2026-11-24)\; resm
+ i duyurudan henüz doğrulanmadı.\nKaynak: https://aof.anadolu.edu.tr/\nT
+ arihleri resmi kaynaktan kontrol edin.
+URL:https://aof.anadolu.edu.tr/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=END:-P4D
+DESCRIPTION:⚠ AÖF dönem sınavı
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aof-donem-sonu@burs-takvimi
+DTSTAMP:20261124T000000Z
+DTSTART;VALUE=DATE:20270116
+DTEND;VALUE=DATE:20270118
+SUMMARY:⚠ AÖF güz dönem sonu sınavı
+DESCRIPTION:Araştırma bulgusu (2026-11-24)\; resmi duyurudan henüz doğr
+ ulanmadı.\nKaynak: https://aof.anadolu.edu.tr/\nTarihleri resmi kaynaktan
+  kontrol edin.
+URL:https://aof.anadolu.edu.tr/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=END:-P4D
+DESCRIPTION:⚠ AÖF güz dönem sonu sınavı
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:osym-yks-sinav@burs-takvimi
+DTSTAMP:20261124T000000Z
+DTSTART;VALUE=DATE:20270619
+DTEND;VALUE=DATE:20270621
+SUMMARY:⚠ 2027 YKS sınavı (TYT/AYT/YDT)
+DESCRIPTION:TYT 19 Haziran\, AYT/YDT 20 Haziran 2027. Araştırma bulgusu (
+ 2026-11-24)\; resmi duyurudan henüz doğrulanmadı.\nKaynak: https://www.
+ osym.gov.tr/\nTarihleri resmi kaynaktan kontrol edin.
+URL:https://www.osym.gov.tr/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=END:-P4D
+DESCRIPTION:⚠ 2027 YKS sınavı (TYT/AYT/YDT)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:osym-dgs-sinav@burs-takvimi
+DTSTAMP:20261124T000000Z
+DTSTART;VALUE=DATE:20270718
+DTEND;VALUE=DATE:20270719
+SUMMARY:⚠ 2027 DGS sınavı
+DESCRIPTION:Araştırma bulgusu (2026-11-24)\; resmi duyurudan henüz doğr
+ ulanmadı.\nKaynak: https://www.osym.gov.tr/\nTarihleri resmi kaynaktan ko
+ ntrol edin.
+URL:https://www.osym.gov.tr/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=END:-P4D
+DESCRIPTION:⚠ 2027 DGS sınavı
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:osym-yokdil-1@burs-takvimi
+DTSTAMP:20261124T000000Z
+DTSTART;VALUE=DATE:20270228
+DTEND;VALUE=DATE:20270301
+SUMMARY:⚠ 2027 YÖKDİL/1 sınavı
+DESCRIPTION:Araştırma bulgusu (2026-11-24)\; resmi duyurudan henüz doğr
+ ulanmadı.\nKaynak: https://www.osym.gov.tr/\nTarihleri resmi kaynaktan ko
+ ntrol edin.
+URL:https://www.osym.gov.tr/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=END:-P4D
+DESCRIPTION:⚠ 2027 YÖKDİL/1 sınavı
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:osym-yds-1@burs-takvimi
+DTSTAMP:20261124T000000Z
+DTSTART;VALUE=DATE:20270328
+DTEND;VALUE=DATE:20270329
+SUMMARY:⚠ 2027 YDS/1 sınavı
+DESCRIPTION:Araştırma bulgusu (2026-11-24)\; resmi duyurudan henüz doğr
+ ulanmadı.\nKaynak: https://www.osym.gov.tr/\nTarihleri resmi kaynaktan ko
+ ntrol edin.
+URL:https://www.osym.gov.tr/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=END:-P4D
+DESCRIPTION:⚠ 2027 YDS/1 sınavı
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:osym-ales-1@burs-takvimi
+DTSTAMP:20261124T000000Z
+DTSTART;VALUE=DATE:20270418
+DTEND;VALUE=DATE:20270419
+SUMMARY:⚠ 2027 ALES/1 sınavı
+DESCRIPTION:Araştırma bulgusu (2026-11-24)\; resmi duyurudan henüz doğr
+ ulanmadı.\nKaynak: https://www.osym.gov.tr/\nTarihleri resmi kaynaktan ko
+ ntrol edin.
+URL:https://www.osym.gov.tr/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=END:-P4D
+DESCRIPTION:⚠ 2027 ALES/1 sınavı
+END:VALARM
+END:VEVENT
+END:VCALENDAR

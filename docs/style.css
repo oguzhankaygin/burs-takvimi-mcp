@@ -1,0 +1,79 @@
+:root {
+  color-scheme: light dark;
+  --zemin: #f2f6fa;
+  --yuzey: #fff;
+  --metin: #152538;
+  --ikincil: #43566b;
+  --cizgi: #697b8e;
+  --vurgu: #13569a;
+  --dugme: #fff;
+  --uyari: #fff0c2;
+  --uyari-metin: #593900;
+  --onay: #d8f3e8;
+  --onay-metin: #134b3c;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --zemin: #101923;
+    --yuzey: #1b2836;
+    --metin: #f1f6fc;
+    --ikincil: #c2cfdd;
+    --cizgi: #899fb6;
+    --vurgu: #a0cfff;
+    --dugme: #112337;
+    --uyari: #493614;
+    --uyari-metin: #ffe5a2;
+    --onay: #193e35;
+    --onay-metin: #bcf1df;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--zemin);
+  color: var(--metin);
+  font: 1rem/1.55 system-ui, sans-serif;
+}
+main { max-width: 65rem; margin: auto; padding: 1.5rem 1rem 3rem; }
+header { margin-bottom: 1.5rem; }
+h1 { margin: 0 0 .8rem; font-size: clamp(1.8rem, 5vw, 3rem); line-height: 1.15; }
+h2 { margin: 0; font-size: 1.15rem; line-height: 1.35; }
+a { color: var(--vurgu); text-underline-offset: .2em; overflow-wrap: anywhere; }
+summary { cursor: pointer; width: fit-content; color: var(--vurgu); }
+:focus-visible { outline: 3px solid var(--vurgu); outline-offset: 3px; }
+.uyari {
+  margin: 0;
+  padding: .65rem 1rem;
+  text-align: center;
+  font-weight: 650;
+}
+.uyari, .supheli, .acil { background: var(--uyari); color: var(--uyari-metin); }
+.filtreler {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: .75rem;
+}
+label { display: block; font-weight: 600; }
+[hidden] { display: none; }
+button, input, select, textarea {
+  border: 1px solid var(--cizgi);
+  background: var(--yuzey);
+  color: var(--metin);
+  border-radius: .45rem;
+  padding: .5rem .65rem;
+  min-height: 2.75rem;
+  font: inherit;
+}
+input, select, textarea { width: 100%; margin-top: .25rem; }
+button { cursor: pointer; font-weight: 650; }
+button:disabled { cursor: default; }
+.sekme { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.25rem 0 .75rem; }
+[aria-selected="true"], #claude:enabled { background: var(--vurgu); color: var(--dugme); }
+fieldset { min-width: 0; margin: 0; border: 1px solid var(--cizgi); border-radius: .6rem; }
+.kayitlar { list-style: none; padding: 0; display: grid; gap: .75rem; }
+.kayitlar li { background: var(--yuzey); border-radius: .65rem; padding: 1rem; border: 1px solid var(--cizgi); }
+.kayitlar p { margin: .5rem 0; }
+.etiket { display: inline-block; padding: .15rem .45rem; border-radius: .3rem; font-size: .875rem; font-weight: 650; }
+.onay { background: var(--onay); color: var(--onay-metin); }
+.meta { color: var(--ikincil); }
+.islemler { display: flex; flex-wrap: wrap; gap: .65rem 1rem; align-items: center; margin-top: .75rem; }

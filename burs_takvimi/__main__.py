@@ -5,12 +5,14 @@ import sys
 
 from .data import KATEGORILER, OGRENIM, bugun, takvimi_yukle
 from .server import sun
+from .site import siteyi_derle
 from .tools import calistir, tablo
 
 
 def _ayristirici():
     ayr = argparse.ArgumentParser(description="Burs ve Yurt Takvimi")
     kipler = ayr.add_subparsers(dest="kip")
+    kipler.add_parser("build-site", help="Statik site verilerini üret")
     cli = kipler.add_parser("cli", help="Takvimi terminalde sorgula")
     komutlar = cli.add_subparsers(dest="komut", required=True)
 
@@ -66,6 +68,9 @@ def main():
     ayristirici = _ayristirici()
     secenekler = ayristirici.parse_args()
     try:
+        if secenekler.kip == "build-site":
+            siteyi_derle()
+            return 0
         veri = takvimi_yukle()
         if secenekler.kip == "cli":
             argumanlar = {ad: deger for ad, deger in vars(secenekler).items()

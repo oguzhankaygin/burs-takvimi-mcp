@@ -2,6 +2,23 @@
 
 Türk üniversite öğrencileri için yerel bir MCP sunucusu. Claude, KYK burs ve kredi başvuruları, yurt, VGM, ÖSYM, AÖF, Erasmus+ ve geçiş duyurularını aynı takvimden sorgulayabilir. Kayıtlar kaynak adresini, kontrol tarihini ve doğrulama durumunu taşır.
 
+## Tarayıcıda kullan
+
+[Burs ve Yurt Takvimi’ni aç](https://oguzhankaygin.github.io/burs-takvimi-mcp/).
+Takvimi kurulum ve hesap gerekmeksizin inceleyebilir, başvuruları filtreleyebilir ve
+kişisel kontrol listeni oluşturabilirsin. Tek bir kaydı indirebilir veya tüm takvime
+abone olabilirsin. İlk çevrimiçi yüklemeden sonra takvim çevrimdışı açılabilir.
+Claude’a sor özelliği, filtrelenen kayıtları kopyalayıp kendi Claude hesabında kullanman için
+Claude’u ayrı sekmede açar.
+
+Kaynak veri değiştiğinde GitHub Pages için dosyaları proje dizininde yeniden üret:
+
+```sh
+python3 -m burs_takvimi build-site
+```
+
+GitHub Pages yayın kaynağı olarak deponun yayın dalındaki `/docs` klasörünü kullanır.
+
 ## Kurulum
 
 Python 3.10 veya üzeri yeterli. Proje dizininde aşağıdaki komutlarla çalıştırabilirsin.

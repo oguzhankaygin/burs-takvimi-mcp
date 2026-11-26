@@ -1,0 +1,251 @@
+{
+  "version": 1,
+  "updated": "2026-11-24",
+  "entries": [
+    {
+      "id": "kyk-burs-kredi",
+      "baslik": "KYK burs ve öğrenim kredisi başvurusu",
+      "kurum": "GSB KYGM",
+      "kategori": "kyk-burs",
+      "ogrenim": [
+        "hepsi"
+      ],
+      "baslangic": "2026-10-12",
+      "bitis": "2026-10-16",
+      "tekrar": "yillik",
+      "kaynak_url": "https://kygm.gsb.gov.tr/",
+      "kontrol_tarihi": "2026-11-24",
+      "dogrulandi": false,
+      "notlar": "2026-2027 başvuruları kapandı; sonuçların 6 Kasım 2026'da açıklandığı bildiriliyor. Araştırma bulgusu (2026-11-24); resmi duyurudan henüz doğrulanmadı.",
+      "belgeler": []
+    },
+    {
+      "id": "kyk-yurt",
+      "baslik": "KYK yurt başvurusu",
+      "kurum": "GSB KYGM",
+      "kategori": "kyk-yurt",
+      "ogrenim": [
+        "hepsi"
+      ],
+      "baslangic": null,
+      "bitis": null,
+      "tekrar": "yillik",
+      "kaynak_url": "https://kygm.gsb.gov.tr/",
+      "kontrol_tarihi": "2026-11-24",
+      "dogrulandi": false,
+      "notlar": "Ana yurt başvuruları genelde Ağustos'un son haftasında; yedek yerleştirmeler dönem içinde sürebilir. Araştırma bulgusu (2026-11-24); resmi duyurudan henüz doğrulanmadı.",
+      "belgeler": []
+    },
+    {
+      "id": "vgm-burs",
+      "baslik": "VGM yükseköğrenim bursu başvurusu",
+      "kurum": "VGM",
+      "kategori": "vgm",
+      "ogrenim": [
+        "onlisans",
+        "lisans"
+      ],
+      "baslangic": "2026-10-22",
+      "bitis": "2026-10-31",
+      "tekrar": "yillik",
+      "kaynak_url": "https://www.vgm.gov.tr/",
+      "kontrol_tarihi": "2026-11-24",
+      "dogrulandi": false,
+      "notlar": "Sonuçların 23 Kasım 2026'da ilan edildiği bildiriliyor. Araştırma bulgusu (2026-11-24); resmi duyurudan henüz doğrulanmadı.",
+      "belgeler": []
+    },
+    {
+      "id": "osym-yks",
+      "baslik": "YKS başvurusu",
+      "kurum": "ÖSYM",
+      "kategori": "osym",
+      "ogrenim": [
+        "hepsi"
+      ],
+      "baslangic": "2027-02-04",
+      "bitis": "2027-03-02",
+      "tekrar": "yillik",
+      "kaynak_url": "https://www.osym.gov.tr/",
+      "kontrol_tarihi": "2026-11-24",
+      "dogrulandi": false,
+      "notlar": "2027 YKS başvuru dönemi. Araştırma bulgusu (2026-11-24); resmi duyurudan henüz doğrulanmadı.",
+      "belgeler": []
+    },
+    {
+      "id": "osym-dgs",
+      "baslik": "DGS başvurusu",
+      "kurum": "ÖSYM",
+      "kategori": "osym",
+      "ogrenim": [
+        "onlisans"
+      ],
+      "baslangic": null,
+      "bitis": null,
+      "tekrar": "yillik",
+      "kaynak_url": "https://www.osym.gov.tr/",
+      "kontrol_tarihi": "2026-11-24",
+      "dogrulandi": false,
+      "notlar": "2027 DGS başvuru dönemi kılavuzla netleşecek. Araştırma bulgusu (2026-11-24); resmi duyurudan henüz doğrulanmadı.",
+      "belgeler": []
+    },
+    {
+      "id": "aof-sinav",
+      "baslik": "AÖF dönem sınavı",
+      "kurum": "Anadolu Üniversitesi",
+      "kategori": "aof",
+      "ogrenim": [
+        "onlisans",
+        "lisans"
+      ],
+      "baslangic": "2026-12-05",
+      "bitis": "2026-12-06",
+      "tekrar": "yillik",
+      "kaynak_url": "https://aof.anadolu.edu.tr/",
+      "kontrol_tarihi": "2026-11-24",
+      "dogrulandi": false,
+      "notlar": "AÖF güz ara sınavı. Araştırma bulgusu (2026-11-24); resmi duyurudan henüz doğrulanmadı.",
+      "belgeler": []
+    },
+    {
+      "id": "erasmus-ogrenim",
+      "baslik": "Erasmus+ öğrenim hareketliliği",
+      "kurum": "Türkiye Ulusal Ajansı",
+      "kategori": "erasmus",
+      "ogrenim": [
+        "hepsi"
+      ],
+      "baslangic": null,
+      "bitis": null,
+      "tekrar": "yillik",
+      "kaynak_url": "https://www.ua.gov.tr/",
+      "kontrol_tarihi": "2026-11-24",
+      "dogrulandi": false,
+      "notlar": "Üniversiteler başvuruları genelde Kasım 2026 - Mart 2027 arasında kendi takvimleriyle alır; üniversitenin dış ilişkiler ofisini kontrol et. Araştırma bulgusu (2026-11-24); resmi duyurudan henüz doğrulanmadı.",
+      "belgeler": []
+    },
+    {
+      "id": "yatay-gecis",
+      "baslik": "Yatay geçiş başvurusu",
+      "kurum": "Üniversiteler",
+      "kategori": "gecis",
+      "ogrenim": [
+        "onlisans",
+        "lisans"
+      ],
+      "baslangic": null,
+      "bitis": null,
+      "tekrar": "yillik",
+      "kaynak_url": "https://www.yok.gov.tr/",
+      "kontrol_tarihi": "2026-11-24",
+      "dogrulandi": false,
+      "notlar": "Ek Madde 1 güz başvuruları genelde Ağustos'un ilk yarısında; bahar için kontenjan açan üniversiteler genelde Ocak sonunda duyurur. Üniversitenin öğrenci işleri duyurusunu kontrol et. Araştırma bulgusu (2026-11-24); resmi duyurudan henüz doğrulanmadı.",
+      "belgeler": []
+    },
+    {
+      "id": "aof-donem-sonu",
+      "baslik": "AÖF güz dönem sonu sınavı",
+      "kurum": "Anadolu Üniversitesi",
+      "kategori": "aof",
+      "ogrenim": [
+        "onlisans",
+        "lisans"
+      ],
+      "baslangic": "2027-01-16",
+      "bitis": "2027-01-17",
+      "kaynak_url": "https://aof.anadolu.edu.tr/",
+      "notlar": "Araştırma bulgusu (2026-11-24); resmi duyurudan henüz doğrulanmadı.",
+      "tekrar": "yillik",
+      "kontrol_tarihi": "2026-11-24",
+      "dogrulandi": false,
+      "belgeler": []
+    },
+    {
+      "id": "osym-yks-sinav",
+      "baslik": "2027 YKS sınavı (TYT/AYT/YDT)",
+      "kurum": "ÖSYM",
+      "kategori": "osym",
+      "ogrenim": [
+        "hepsi"
+      ],
+      "baslangic": "2027-06-19",
+      "bitis": "2027-06-20",
+      "kaynak_url": "https://www.osym.gov.tr/",
+      "notlar": "TYT 19 Haziran, AYT/YDT 20 Haziran 2027. Araştırma bulgusu (2026-11-24); resmi duyurudan henüz doğrulanmadı.",
+      "tekrar": "yillik",
+      "kontrol_tarihi": "2026-11-24",
+      "dogrulandi": false,
+      "belgeler": []
+    },
+    {
+      "id": "osym-dgs-sinav",
+      "baslik": "2027 DGS sınavı",
+      "kurum": "ÖSYM",
+      "kategori": "osym",
+      "ogrenim": [
+        "onlisans"
+      ],
+      "baslangic": "2027-07-18",
+      "bitis": "2027-07-18",
+      "kaynak_url": "https://www.osym.gov.tr/",
+      "notlar": "Araştırma bulgusu (2026-11-24); resmi duyurudan henüz doğrulanmadı.",
+      "tekrar": "yillik",
+      "kontrol_tarihi": "2026-11-24",
+      "dogrulandi": false,
+      "belgeler": []
+    },
+    {
+      "id": "osym-yokdil-1",
+      "baslik": "2027 YÖKDİL/1 sınavı",
+      "kurum": "ÖSYM",
+      "kategori": "osym",
+      "ogrenim": [
+        "yuksek-lisans",
+        "doktora"
+      ],
+      "baslangic": "2027-02-28",
+      "bitis": "2027-02-28",
+      "kaynak_url": "https://www.osym.gov.tr/",
+      "notlar": "Araştırma bulgusu (2026-11-24); resmi duyurudan henüz doğrulanmadı.",
+      "tekrar": "yillik",
+      "kontrol_tarihi": "2026-11-24",
+      "dogrulandi": false,
+      "belgeler": []
+    },
+    {
+      "id": "osym-yds-1",
+      "baslik": "2027 YDS/1 sınavı",
+      "kurum": "ÖSYM",
+      "kategori": "osym",
+      "ogrenim": [
+        "hepsi"
+      ],
+      "baslangic": "2027-03-28",
+      "bitis": "2027-03-28",
+      "kaynak_url": "https://www.osym.gov.tr/",
+      "notlar": "Araştırma bulgusu (2026-11-24); resmi duyurudan henüz doğrulanmadı.",
+      "tekrar": "yillik",
+      "kontrol_tarihi": "2026-11-24",
+      "dogrulandi": false,
+      "belgeler": []
+    },
+    {
+      "id": "osym-ales-1",
+      "baslik": "2027 ALES/1 sınavı",
+      "kurum": "ÖSYM",
+      "kategori": "osym",
+      "ogrenim": [
+        "lisans",
+        "yuksek-lisans",
+        "doktora"
+      ],
+      "baslangic": "2027-04-18",
+      "bitis": "2027-04-18",
+      "kaynak_url": "https://www.osym.gov.tr/",
+      "notlar": "Araştırma bulgusu (2026-11-24); resmi duyurudan henüz doğrulanmadı.",
+      "tekrar": "yillik",
+      "kontrol_tarihi": "2026-11-24",
+      "dogrulandi": false,
+      "belgeler": []
+    }
+  ]
+}
