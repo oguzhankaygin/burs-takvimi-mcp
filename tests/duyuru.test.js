@@ -46,6 +46,8 @@ test("bağlama göre tür ve belirsizlik uyarıları", () => {
     ["Son başvuru", "son_basvuru"], ["Son gün", "son_basvuru"], ["Bitiş", "son_basvuru"],
     ["Başvurular 14 Aralık 2026 tarihinde başlayacak", "basvuru_baslangic"],
     ["Başlangıç", "basvuru_baslangic"], ["SINAV", "sinav"], ["Sonuç", "sonuc"],
+    ["Sınav giriş belgeleri", "belge"], ["SINAV GİRİŞ BELGESİ", "belge"], ["Sınav yerleri", "belge"],
+    ["Sınava giriş belgesi", "belge"], ["Sınav binası", "belge"],
     ["ÖDEME", "odeme"], ["Harç", "odeme"], ["Etkinlik", "diger"],
   ]) {
     const [k] = ayikla(metin.includes("2026") ? metin : `${metin} 14 Aralık 2026`).olaylar;
