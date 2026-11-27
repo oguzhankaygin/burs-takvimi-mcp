@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-26",
+  "updated": "2026-11-27",
   "entries": [
     {
       "id": "kyk-burs-kredi",
@@ -65,10 +65,10 @@
       "baslangic": "2027-02-04",
       "bitis": "2027-03-02",
       "tekrar": "yillik",
-      "kaynak_url": "https://www.osym.gov.tr/",
-      "kontrol_tarihi": "2026-11-24",
-      "dogrulandi": false,
-      "notlar": "2027 YKS başvuru dönemi. Araştırma bulgusu (2026-11-24); resmi duyurudan henüz doğrulanmadı.",
+      "kaynak_url": "https://dokuman.osym.gov.tr/web/2026/10/osym-2027-yili-sinav-takvimi-7d09wi-28090734.pdf",
+      "kontrol_tarihi": "2026-11-27",
+      "dogrulandi": true,
+      "notlar": "2027 YKS başvuruları 4 Şubat–2 Mart 2027; geç başvuru 16-18 Mart 2027. ÖSYM 2027 Yılı Sınav Takvimi'nden doğrulandı (2026-11-27).",
       "belgeler": []
     },
     {
@@ -79,13 +79,13 @@
       "ogrenim": [
         "onlisans"
       ],
-      "baslangic": null,
-      "bitis": null,
+      "baslangic": "2027-05-26",
+      "bitis": "2027-06-03",
       "tekrar": "yillik",
-      "kaynak_url": "https://www.osym.gov.tr/",
-      "kontrol_tarihi": "2026-11-24",
-      "dogrulandi": false,
-      "notlar": "2027 DGS başvuru dönemi kılavuzla netleşecek. Araştırma bulgusu (2026-11-24); resmi duyurudan henüz doğrulanmadı.",
+      "kaynak_url": "https://dokuman.osym.gov.tr/web/2026/10/osym-2027-yili-sinav-takvimi-7d09wi-28090734.pdf",
+      "kontrol_tarihi": "2026-11-27",
+      "dogrulandi": true,
+      "notlar": "2027 DGS başvuruları 26 Mayıs–3 Haziran 2027; geç başvuru 15 Haziran 2027. ÖSYM 2027 Yılı Sınav Takvimi'nden doğrulandı (2026-11-27).",
       "belgeler": []
     },
     {
@@ -169,11 +169,11 @@
       ],
       "baslangic": "2027-06-19",
       "bitis": "2027-06-20",
-      "kaynak_url": "https://www.osym.gov.tr/",
-      "notlar": "TYT 19 Haziran, AYT/YDT 20 Haziran 2027. Araştırma bulgusu (2026-11-24); resmi duyurudan henüz doğrulanmadı.",
+      "kaynak_url": "https://dokuman.osym.gov.tr/web/2026/10/osym-2027-yili-sinav-takvimi-7d09wi-28090734.pdf",
+      "notlar": "TYT 19 Haziran, AYT/YDT 20 Haziran 2027; sonuçlar 21 Temmuz 2027. ÖSYM 2027 Yılı Sınav Takvimi'nden doğrulandı (2026-11-27).",
       "tekrar": "yillik",
-      "kontrol_tarihi": "2026-11-24",
-      "dogrulandi": false,
+      "kontrol_tarihi": "2026-11-27",
+      "dogrulandi": true,
       "belgeler": []
     },
     {
@@ -186,11 +186,11 @@
       ],
       "baslangic": "2027-07-18",
       "bitis": "2027-07-18",
-      "kaynak_url": "https://www.osym.gov.tr/",
-      "notlar": "Araştırma bulgusu (2026-11-24); resmi duyurudan henüz doğrulanmadı.",
+      "kaynak_url": "https://dokuman.osym.gov.tr/web/2026/10/osym-2027-yili-sinav-takvimi-7d09wi-28090734.pdf",
+      "notlar": "Sonuçlar 12 Ağustos 2027. ÖSYM 2027 Yılı Sınav Takvimi'nden doğrulandı (2026-11-27).",
       "tekrar": "yillik",
-      "kontrol_tarihi": "2026-11-24",
-      "dogrulandi": false,
+      "kontrol_tarihi": "2026-11-27",
+      "dogrulandi": true,
       "belgeler": []
     },
     {
@@ -204,11 +204,11 @@
       ],
       "baslangic": "2027-02-28",
       "bitis": "2027-02-28",
-      "kaynak_url": "https://www.osym.gov.tr/",
-      "notlar": "Araştırma bulgusu (2026-11-24); resmi duyurudan henüz doğrulanmadı.",
+      "kaynak_url": "https://dokuman.osym.gov.tr/web/2026/10/osym-2027-yili-sinav-takvimi-7d09wi-28090734.pdf",
+      "notlar": "Başvurular 12–20 Ocak 2027; geç başvuru 28 Ocak; sonuçlar 26 Mart 2027. ÖSYM 2027 Yılı Sınav Takvimi'nden doğrulandı (2026-11-27).",
       "tekrar": "yillik",
-      "kontrol_tarihi": "2026-11-24",
-      "dogrulandi": false,
+      "kontrol_tarihi": "2026-11-27",
+      "dogrulandi": true,
       "belgeler": []
     },
     {
@@ -221,11 +221,11 @@
       ],
       "baslangic": "2027-03-28",
       "bitis": "2027-03-28",
-      "kaynak_url": "https://www.osym.gov.tr/",
-      "notlar": "Araştırma bulgusu (2026-11-24); resmi duyurudan henüz doğrulanmadı.",
+      "kaynak_url": "https://dokuman.osym.gov.tr/web/2026/10/osym-2027-yili-sinav-takvimi-7d09wi-28090734.pdf",
+      "notlar": "Başvurular 3–11 Şubat 2027; geç başvuru 18 Şubat; sonuçlar 21 Nisan 2027. ÖSYM 2027 Yılı Sınav Takvimi'nden doğrulandı (2026-11-27).",
       "tekrar": "yillik",
-      "kontrol_tarihi": "2026-11-24",
-      "dogrulandi": false,
+      "kontrol_tarihi": "2026-11-27",
+      "dogrulandi": true,
       "belgeler": []
     },
     {
@@ -240,11 +240,11 @@
       ],
       "baslangic": "2027-04-18",
       "bitis": "2027-04-18",
-      "kaynak_url": "https://www.osym.gov.tr/",
-      "notlar": "Araştırma bulgusu (2026-11-24); resmi duyurudan henüz doğrulanmadı.",
+      "kaynak_url": "https://dokuman.osym.gov.tr/web/2026/10/osym-2027-yili-sinav-takvimi-7d09wi-28090734.pdf",
+      "notlar": "Başvurular 24 Şubat–4 Mart 2027; geç başvuru 17 Mart; sonuçlar 7 Mayıs 2027. ÖSYM 2027 Yılı Sınav Takvimi'nden doğrulandı (2026-11-27).",
       "tekrar": "yillik",
-      "kontrol_tarihi": "2026-11-24",
-      "dogrulandi": false,
+      "kontrol_tarihi": "2026-11-27",
+      "dogrulandi": true,
       "belgeler": []
     },
     {
@@ -260,9 +260,9 @@
       "bitis": "2026-12-14",
       "tekrar": "yillik",
       "kaynak_url": "https://ulusalstajprogrami.iskur.gov.tr/",
-      "kontrol_tarihi": "2026-11-26",
-      "dogrulandi": false,
-      "notlar": "Haberlere göre başvurular 14 Aralık 2026 23.59'da kapanıyor; 1 Ocak 2027 itibarıyla 35 yaşını doldurmamış olmak ve 4 üzerinden en az 2,00 ortalama aranıyor. Program Kariyer Kapısı'ndan İŞKUR'a taşınmış görünüyor. Araştırma bulgusu (2026-11-26); resmi duyurudan henüz doğrulanmadı.",
+      "kontrol_tarihi": "2026-11-27",
+      "dogrulandi": true,
+      "notlar": "Başvuru dönemi 26 Ekim–14 Aralık 2026 (resmi program sitesinden doğrulandı, 2026-11-27). Haberlere göre 1 Ocak 2027 itibarıyla 35 yaşını doldurmamış olmak ve 4 üzerinden en az 2,00 ortalama aranıyor; bu koşulları başvuru formunda kontrol et. Başvurudan sonra işveren tekliflerini sitede takip et.",
       "belgeler": [
         "e-Devlet girişi",
         "Güncel transkript (not ortalaması)"
@@ -281,9 +281,9 @@
       "bitis": "2026-11-11",
       "tekrar": "yillik",
       "kaynak_url": "https://tubitak.gov.tr/en/announcement/2209-research-project-support-programme-undergraduate-students-and-2209-b-industry-oriented-research-project-support-programme-undergraduate-students-2026-calls-are-open-application",
-      "kontrol_tarihi": "2026-11-26",
-      "dogrulandi": false,
-      "notlar": "2026 çağrısı TÜBİTAK duyurusuna göre 11 Kasım 2026 17.30'da kapandı (bazı üniversiteler uzatma duyurdu); kurum onayı 16-23 Kasım. Danışmanla proje fikrini bir sonraki çağrıdan önce hazırlamaya başla. 2209-B sanayi odaklı sürümdür. Araştırma bulgusu (2026-11-26).",
+      "kontrol_tarihi": "2026-11-27",
+      "dogrulandi": true,
+      "notlar": "2026 çağrısı 7 Ekim–11 Kasım 2026 17.30 arasındaydı; kurum yetkilisi onayı 16-23 Kasım (TÜBİTAK duyurusundan doğrulandı, 2026-11-27). Danışmanla proje fikrini bir sonraki çağrıdan önce hazırlamaya başla. 2209-B sanayi odaklı sürümdür.",
       "belgeler": [
         "Proje önerisi",
         "Danışman onayı",

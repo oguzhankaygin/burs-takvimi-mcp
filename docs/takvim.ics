@@ -4,7 +4,7 @@ PRODID:-//Burs Takvimi//TR
 CALSCALE:GREGORIAN
 BEGIN:VEVENT
 UID:kyk-burs-kredi@burs-takvimi
-DTSTAMP:20261126T000000Z
+DTSTAMP:20261127T000000Z
 DTSTART;VALUE=DATE:20261012
 DTEND;VALUE=DATE:20261017
 SUMMARY:⚠ KYK burs ve öğrenim kredisi başvurusu
@@ -21,7 +21,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:vgm-burs@burs-takvimi
-DTSTAMP:20261126T000000Z
+DTSTAMP:20261127T000000Z
 DTSTART;VALUE=DATE:20261022
 DTEND;VALUE=DATE:20261101
 SUMMARY:⚠ VGM yükseköğrenim bursu başvurusu
@@ -37,23 +37,44 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:osym-yks@burs-takvimi
-DTSTAMP:20261126T000000Z
+DTSTAMP:20261127T000000Z
 DTSTART;VALUE=DATE:20270204
 DTEND;VALUE=DATE:20270303
-SUMMARY:⚠ YKS başvurusu
-DESCRIPTION:2027 YKS başvuru dönemi. Araştırma bulgusu (2026-11-24)\; r
- esmi duyurudan henüz doğrulanmadı.\nKaynak: https://www.osym.gov.tr/\nT
- arihleri resmi kaynaktan kontrol edin.
-URL:https://www.osym.gov.tr/
+SUMMARY:YKS başvurusu
+DESCRIPTION:2027 YKS başvuruları 4 Şubat–2 Mart 2027\; geç başvuru 1
+ 6-18 Mart 2027. ÖSYM 2027 Yılı Sınav Takvimi'nden doğrulandı (2026-1
+ 1-27).\nKaynak: https://dokuman.osym.gov.tr/web/2026/10/osym-2027-yili-sin
+ av-takvimi-7d09wi-28090734.pdf\nTarihleri resmi kaynaktan kontrol edin.
+URL:https://dokuman.osym.gov.tr/web/2026/10/osym-2027-yili-sinav-takvimi-7d
+ 09wi-28090734.pdf
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER;RELATED=END:-P4D
-DESCRIPTION:⚠ YKS başvurusu
+DESCRIPTION:YKS başvurusu
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:osym-dgs@burs-takvimi
+DTSTAMP:20261127T000000Z
+DTSTART;VALUE=DATE:20270526
+DTEND;VALUE=DATE:20270604
+SUMMARY:DGS başvurusu
+DESCRIPTION:2027 DGS başvuruları 26 Mayıs–3 Haziran 2027\; geç başvu
+ ru 15 Haziran 2027. ÖSYM 2027 Yılı Sınav Takvimi'nden doğrulandı (20
+ 26-11-27).\nKaynak: https://dokuman.osym.gov.tr/web/2026/10/osym-2027-yili
+ -sinav-takvimi-7d09wi-28090734.pdf\nTarihleri resmi kaynaktan kontrol edin
+ .
+URL:https://dokuman.osym.gov.tr/web/2026/10/osym-2027-yili-sinav-takvimi-7d
+ 09wi-28090734.pdf
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=END:-P4D
+DESCRIPTION:DGS başvurusu
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:aof-sinav@burs-takvimi
-DTSTAMP:20261126T000000Z
+DTSTAMP:20261127T000000Z
 DTSTART;VALUE=DATE:20261205
 DTEND;VALUE=DATE:20261207
 SUMMARY:⚠ AÖF dönem sınavı
@@ -69,7 +90,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:aof-donem-sonu@burs-takvimi
-DTSTAMP:20261126T000000Z
+DTSTAMP:20261127T000000Z
 DTSTART;VALUE=DATE:20270116
 DTEND;VALUE=DATE:20270118
 SUMMARY:⚠ AÖF güz dönem sonu sınavı
@@ -85,118 +106,130 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:osym-yks-sinav@burs-takvimi
-DTSTAMP:20261126T000000Z
+DTSTAMP:20261127T000000Z
 DTSTART;VALUE=DATE:20270619
 DTEND;VALUE=DATE:20270621
-SUMMARY:⚠ 2027 YKS sınavı (TYT/AYT/YDT)
-DESCRIPTION:TYT 19 Haziran\, AYT/YDT 20 Haziran 2027. Araştırma bulgusu (
- 2026-11-24)\; resmi duyurudan henüz doğrulanmadı.\nKaynak: https://www.
- osym.gov.tr/\nTarihleri resmi kaynaktan kontrol edin.
-URL:https://www.osym.gov.tr/
+SUMMARY:2027 YKS sınavı (TYT/AYT/YDT)
+DESCRIPTION:TYT 19 Haziran\, AYT/YDT 20 Haziran 2027\; sonuçlar 21 Temmuz 
+ 2027. ÖSYM 2027 Yılı Sınav Takvimi'nden doğrulandı (2026-11-27).\nKa
+ ynak: https://dokuman.osym.gov.tr/web/2026/10/osym-2027-yili-sinav-takvimi
+ -7d09wi-28090734.pdf\nTarihleri resmi kaynaktan kontrol edin.
+URL:https://dokuman.osym.gov.tr/web/2026/10/osym-2027-yili-sinav-takvimi-7d
+ 09wi-28090734.pdf
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER;RELATED=END:-P4D
-DESCRIPTION:⚠ 2027 YKS sınavı (TYT/AYT/YDT)
+DESCRIPTION:2027 YKS sınavı (TYT/AYT/YDT)
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:osym-dgs-sinav@burs-takvimi
-DTSTAMP:20261126T000000Z
+DTSTAMP:20261127T000000Z
 DTSTART;VALUE=DATE:20270718
 DTEND;VALUE=DATE:20270719
-SUMMARY:⚠ 2027 DGS sınavı
-DESCRIPTION:Araştırma bulgusu (2026-11-24)\; resmi duyurudan henüz doğr
- ulanmadı.\nKaynak: https://www.osym.gov.tr/\nTarihleri resmi kaynaktan ko
- ntrol edin.
-URL:https://www.osym.gov.tr/
+SUMMARY:2027 DGS sınavı
+DESCRIPTION:Sonuçlar 12 Ağustos 2027. ÖSYM 2027 Yılı Sınav Takvimi'nd
+ en doğrulandı (2026-11-27).\nKaynak: https://dokuman.osym.gov.tr/web/202
+ 6/10/osym-2027-yili-sinav-takvimi-7d09wi-28090734.pdf\nTarihleri resmi kay
+ naktan kontrol edin.
+URL:https://dokuman.osym.gov.tr/web/2026/10/osym-2027-yili-sinav-takvimi-7d
+ 09wi-28090734.pdf
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER;RELATED=END:-P4D
-DESCRIPTION:⚠ 2027 DGS sınavı
+DESCRIPTION:2027 DGS sınavı
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:osym-yokdil-1@burs-takvimi
-DTSTAMP:20261126T000000Z
+DTSTAMP:20261127T000000Z
 DTSTART;VALUE=DATE:20270228
 DTEND;VALUE=DATE:20270301
-SUMMARY:⚠ 2027 YÖKDİL/1 sınavı
-DESCRIPTION:Araştırma bulgusu (2026-11-24)\; resmi duyurudan henüz doğr
- ulanmadı.\nKaynak: https://www.osym.gov.tr/\nTarihleri resmi kaynaktan ko
- ntrol edin.
-URL:https://www.osym.gov.tr/
+SUMMARY:2027 YÖKDİL/1 sınavı
+DESCRIPTION:Başvurular 12–20 Ocak 2027\; geç başvuru 28 Ocak\; sonuçl
+ ar 26 Mart 2027. ÖSYM 2027 Yılı Sınav Takvimi'nden doğrulandı (2026-
+ 11-27).\nKaynak: https://dokuman.osym.gov.tr/web/2026/10/osym-2027-yili-si
+ nav-takvimi-7d09wi-28090734.pdf\nTarihleri resmi kaynaktan kontrol edin.
+URL:https://dokuman.osym.gov.tr/web/2026/10/osym-2027-yili-sinav-takvimi-7d
+ 09wi-28090734.pdf
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER;RELATED=END:-P4D
-DESCRIPTION:⚠ 2027 YÖKDİL/1 sınavı
+DESCRIPTION:2027 YÖKDİL/1 sınavı
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:osym-yds-1@burs-takvimi
-DTSTAMP:20261126T000000Z
+DTSTAMP:20261127T000000Z
 DTSTART;VALUE=DATE:20270328
 DTEND;VALUE=DATE:20270329
-SUMMARY:⚠ 2027 YDS/1 sınavı
-DESCRIPTION:Araştırma bulgusu (2026-11-24)\; resmi duyurudan henüz doğr
- ulanmadı.\nKaynak: https://www.osym.gov.tr/\nTarihleri resmi kaynaktan ko
- ntrol edin.
-URL:https://www.osym.gov.tr/
+SUMMARY:2027 YDS/1 sınavı
+DESCRIPTION:Başvurular 3–11 Şubat 2027\; geç başvuru 18 Şubat\; sonu
+ çlar 21 Nisan 2027. ÖSYM 2027 Yılı Sınav Takvimi'nden doğrulandı (2
+ 026-11-27).\nKaynak: https://dokuman.osym.gov.tr/web/2026/10/osym-2027-yil
+ i-sinav-takvimi-7d09wi-28090734.pdf\nTarihleri resmi kaynaktan kontrol edi
+ n.
+URL:https://dokuman.osym.gov.tr/web/2026/10/osym-2027-yili-sinav-takvimi-7d
+ 09wi-28090734.pdf
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER;RELATED=END:-P4D
-DESCRIPTION:⚠ 2027 YDS/1 sınavı
+DESCRIPTION:2027 YDS/1 sınavı
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:osym-ales-1@burs-takvimi
-DTSTAMP:20261126T000000Z
+DTSTAMP:20261127T000000Z
 DTSTART;VALUE=DATE:20270418
 DTEND;VALUE=DATE:20270419
-SUMMARY:⚠ 2027 ALES/1 sınavı
-DESCRIPTION:Araştırma bulgusu (2026-11-24)\; resmi duyurudan henüz doğr
- ulanmadı.\nKaynak: https://www.osym.gov.tr/\nTarihleri resmi kaynaktan ko
- ntrol edin.
-URL:https://www.osym.gov.tr/
+SUMMARY:2027 ALES/1 sınavı
+DESCRIPTION:Başvurular 24 Şubat–4 Mart 2027\; geç başvuru 17 Mart\; s
+ onuçlar 7 Mayıs 2027. ÖSYM 2027 Yılı Sınav Takvimi'nden doğrulandı
+  (2026-11-27).\nKaynak: https://dokuman.osym.gov.tr/web/2026/10/osym-2027-
+ yili-sinav-takvimi-7d09wi-28090734.pdf\nTarihleri resmi kaynaktan kontrol 
+ edin.
+URL:https://dokuman.osym.gov.tr/web/2026/10/osym-2027-yili-sinav-takvimi-7d
+ 09wi-28090734.pdf
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER;RELATED=END:-P4D
-DESCRIPTION:⚠ 2027 ALES/1 sınavı
+DESCRIPTION:2027 ALES/1 sınavı
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:ulusal-staj-programi@burs-takvimi
-DTSTAMP:20261126T000000Z
+DTSTAMP:20261127T000000Z
 DTSTART;VALUE=DATE:20261026
 DTEND;VALUE=DATE:20261215
-SUMMARY:⚠ Ulusal Staj Programı öğrenci başvurusu (2027 dönemi)
-DESCRIPTION:Haberlere göre başvurular 14 Aralık 2026 23.59'da kapanıyor
- \; 1 Ocak 2027 itibarıyla 35 yaşını doldurmamış olmak ve 4 üzerinde
- n en az 2\,00 ortalama aranıyor. Program Kariyer Kapısı'ndan İŞKUR'a 
- taşınmış görünüyor. Araştırma bulgusu (2026-11-26)\; resmi duyuru
- dan henüz doğrulanmadı.\nKaynak: https://ulusalstajprogrami.iskur.gov.t
- r/\nTarihleri resmi kaynaktan kontrol edin.
+SUMMARY:Ulusal Staj Programı öğrenci başvurusu (2027 dönemi)
+DESCRIPTION:Başvuru dönemi 26 Ekim–14 Aralık 2026 (resmi program sites
+ inden doğrulandı\, 2026-11-27). Haberlere göre 1 Ocak 2027 itibarıyla 
+ 35 yaşını doldurmamış olmak ve 4 üzerinden en az 2\,00 ortalama aran
+ ıyor\; bu koşulları başvuru formunda kontrol et. Başvurudan sonra iş
+ veren tekliflerini sitede takip et.\nKaynak: https://ulusalstajprogrami.is
+ kur.gov.tr/\nTarihleri resmi kaynaktan kontrol edin.
 URL:https://ulusalstajprogrami.iskur.gov.tr/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER;RELATED=END:-P4D
-DESCRIPTION:⚠ Ulusal Staj Programı öğrenci başvurusu (2027 dönemi)
+DESCRIPTION:Ulusal Staj Programı öğrenci başvurusu (2027 dönemi)
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:tubitak-2209-a@burs-takvimi
-DTSTAMP:20261126T000000Z
+DTSTAMP:20261127T000000Z
 DTSTART;VALUE=DATE:20261007
 DTEND;VALUE=DATE:20261112
-SUMMARY:⚠ TÜBİTAK 2209-A Üniversite Öğrencileri Araştırma Projeler
- i çağrısı
-DESCRIPTION:2026 çağrısı TÜBİTAK duyurusuna göre 11 Kasım 2026 17.3
- 0'da kapandı (bazı üniversiteler uzatma duyurdu)\; kurum onayı 16-23 K
- asım. Danışmanla proje fikrini bir sonraki çağrıdan önce hazırlama
- ya başla. 2209-B sanayi odaklı sürümdür. Araştırma bulgusu (2026-11
- -26).\nKaynak: https://tubitak.gov.tr/en/announcement/2209-research-projec
- t-support-programme-undergraduate-students-and-2209-b-industry-oriented-re
- search-project-support-programme-undergraduate-students-2026-calls-are-ope
- n-application\nTarihleri resmi kaynaktan kontrol edin.
+SUMMARY:TÜBİTAK 2209-A Üniversite Öğrencileri Araştırma Projeleri ç
+ ağrısı
+DESCRIPTION:2026 çağrısı 7 Ekim–11 Kasım 2026 17.30 arasındaydı\; 
+ kurum yetkilisi onayı 16-23 Kasım (TÜBİTAK duyurusundan doğrulandı\,
+  2026-11-27). Danışmanla proje fikrini bir sonraki çağrıdan önce haz
+ ırlamaya başla. 2209-B sanayi odaklı sürümdür.\nKaynak: https://tubi
+ tak.gov.tr/en/announcement/2209-research-project-support-programme-undergr
+ aduate-students-and-2209-b-industry-oriented-research-project-support-prog
+ ramme-undergraduate-students-2026-calls-are-open-application\nTarihleri re
+ smi kaynaktan kontrol edin.
 URL:https://tubitak.gov.tr/en/announcement/2209-research-project-support-pr
  ogramme-undergraduate-students-and-2209-b-industry-oriented-research-proje
  ct-support-programme-undergraduate-students-2026-calls-are-open-applicatio
@@ -204,8 +237,8 @@ URL:https://tubitak.gov.tr/en/announcement/2209-research-project-support-pr
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER;RELATED=END:-P4D
-DESCRIPTION:⚠ TÜBİTAK 2209-A Üniversite Öğrencileri Araştırma Proj
- eleri çağrısı
+DESCRIPTION:TÜBİTAK 2209-A Üniversite Öğrencileri Araştırma Projeler
+ i çağrısı
 END:VALARM
 END:VEVENT
 END:VCALENDAR
