@@ -1,7 +1,7 @@
 "use strict";
 
-const CACHE = "burs-takvimi-v1";
-const DOSYALAR = ["./index.html", "./style.css", "./app.js", "./takvim.json"];
+const CACHE = "burs-takvimi-v2";
+const DOSYALAR = ["./index.html", "./style.css", "./app.js", "./lib/takvim.js", "./lib/duyuru.js", "./takvim.json"];
 const KOK = new URL("./", self.location.href).href;
 const URLLER = DOSYALAR.map(dosya => new URL(dosya, KOK).href);
 

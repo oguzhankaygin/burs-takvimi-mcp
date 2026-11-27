@@ -6,7 +6,7 @@
   <meta name="description" content="Burs, yurt, staj ve öğrenim başvurularını takip et.">
   <title>Burs ve Yurt Takvimi</title>
   <link rel="stylesheet" href="./style.css">
-  <script src="./app.js" defer></script>
+  <script type="module" src="./app.js"></script>
 </head>
 <body>
   <p class="uyari">⚠ Tarihler doğrulanmamış olabilir, resmi kaynaktan kontrol edin.</p>
@@ -21,7 +21,7 @@
           HTTPS bağlantısının adresini kopyalayıp yapıştır ve Takvim ekle’yi seç.</p>
       </details>
     </header>
-    <section class="filtreler" aria-label="Takvim filtreleri">
+    <section id="takvim-filtreleri" class="filtreler" aria-label="Takvim filtreleri">
       <label>Öğrenim düzeyi <select id="ogrenim">
         <option value="hepsi">Tüm düzeyler</option>
         <option value="onlisans">Ön lisans</option>
@@ -47,6 +47,7 @@
       <button type="button" role="tab" id="yaklasan" aria-selected="true" aria-controls="panel">Yaklaşan</button>
       <button type="button" role="tab" id="tumu" aria-selected="false" aria-controls="panel" tabindex="-1">Tümü</button>
       <button type="button" role="tab" id="kontrol" aria-selected="false" aria-controls="panel" tabindex="-1">Kontrol listem</button>
+      <button type="button" role="tab" id="duyuru" aria-selected="false" aria-controls="duyuru-panel" tabindex="-1">Duyurudan ekle</button>
     </div>
     <section id="panel" role="tabpanel" aria-labelledby="yaklasan" tabindex="0">
       <fieldset id="profil" hidden>
@@ -64,11 +65,54 @@
       <p id="durum" role="status">Takvim yükleniyor…</p>
       <ul id="kayitlar" class="kayitlar"></ul>
     </section>
-    <button type="button" id="claude" disabled>Claude’a sor</button>
-    <p id="kopya-durum" role="status"></p>
-    <label id="elle-kopya" hidden>Claude'a yapıştırmak için metni kopyala
-      <textarea id="prompt" readonly rows="8"></textarea>
-    </label>
+    <div id="takvim-claude">
+      <button type="button" id="claude" disabled>Claude’a sor</button>
+      <p id="kopya-durum" role="status"></p>
+      <label id="elle-kopya" hidden>Claude'a yapıştırmak için metni kopyala
+        <textarea id="prompt" readonly rows="8"></textarea>
+      </label>
+    </div>
+    <section id="duyuru-panel" role="tabpanel" aria-labelledby="duyuru" tabindex="0" hidden>
+      <p>Duyuru ve önizleme bu tarayıcıda kalır. Claude seçeneği istemi panoya kopyalar ve ayrı bir sekme açar. Metni Claude’a kendin yapıştırırsın.</p>
+      <label for="duyuru-metin">Duyuru metni</label>
+      <textarea id="duyuru-metin" rows="7" maxlength="100000"></textarea>
+      <label class="duyuru-tarih">Duyuru tarihi (isteğe bağlı)
+        <input id="duyuru-tarih" type="date" min="0001-01-01" max="9999-12-31">
+      </label>
+      <div class="islemler">
+        <button type="button" id="duyuru-ayikla">Tarihleri ayıkla</button>
+        <button type="button" id="duyuru-claude">Claude’da aç</button>
+      </div>
+      <label id="duyuru-elle-kopya" hidden>Claude’a yapıştırmak için istemi kopyala
+        <textarea id="duyuru-istem" rows="5" readonly></textarea>
+      </label>
+      <details class="duyuru-blok" id="duyuru-cevap">
+        <summary>Claude’un yanıtını yapıştır</summary>
+        <label for="duyuru-yanit">Claude yanıtı</label>
+        <textarea id="duyuru-yanit" rows="5" maxlength="100000"></textarea>
+        <button type="button" id="duyuru-aktar">Yanıtı önizlemeye ekle</button>
+      </details>
+      <p id="duyuru-durum" role="status"></p>
+      <div id="duyuru-onizleme" hidden>
+        <table class="duyuru-tablo">
+          <caption>Olay önizlemesi</caption>
+          <thead><tr><th scope="col">Olay ve düzenleme alanları</th><th scope="col">Kaynak cümle ve uyarılar</th></tr></thead>
+          <tbody id="duyuru-olaylar"></tbody>
+        </table>
+        <div class="islemler">
+          <button type="button" id="duyuru-indir">Seçilenleri .ics olarak indir</button>
+          <button type="button" id="duyuru-kaydet">Kişisel listeme ekle</button>
+        </div>
+        <p id="duyuru-islem-durum" role="status"></p>
+      </div>
+      <div id="duyuru-listeler" hidden></div>
+      <div class="duyuru-blok">
+        <label class="onay-kutusu"><input type="checkbox" id="duyuru-onay"> Kişisel listemi bu tarayıcıda sakla</label>
+        <p>Onay verirsen kişisel listen bu tarayıcıda saklanır. Onay olmadan eklenen kayıtlar sayfa kapanana kadar görünür.</p>
+        <button type="button" id="duyuru-sil">Verilerimi sil</button>
+        <p id="duyuru-depo-durum" role="status"></p>
+      </div>
+    </section>
     <noscript>Takvimi görüntülemek için JavaScript’i etkinleştir. <a href="./takvim.ics">Takvim dosyasını indir</a>.</noscript>
   </main>
 </body>

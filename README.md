@@ -19,6 +19,16 @@ python3 -m burs_takvimi build-site
 
 GitHub Pages yayın kaynağı olarak deponun yayın dalındaki `/docs` klasörünü kullanır.
 
+## Duyurudan ekle
+
+1. **Duyurudan ekle** sekmesine duyuru metnini yapıştır ve **Tarihleri ayıkla** düğmesine bas. Bu işlem çevrimdışı çalışır. Yılı belirtilmeyen tarih için duyuru tarihinden (boşsa Türkiye saatine göre bugünden) itibaren ilk uygun yılı önerir.
+2. Önizlemede kaynak cümleleri ve uyarıları incele. Başlığı, tarihi, saati ve türü düzenleyip eklemek istediğin olayları seç. **Seçilenleri .ics olarak indir** düğmesi bir ve yedi gün öncesine hatırlatıcı ekler.
+3. **Kişisel listeme ekle** düğmesiyle güncel olayları **Yaklaşan** sekmesinde **Benim eklediğim** rozetiyle gör. **Kişisel listemi bu tarayıcıda sakla** kutusunu işaretlersen liste sonraki ziyaretlere kalır. Saklama onayı olmadan liste oturumluk çalışır. Her kaydı ayrı ayrı silebilir veya **Verilerimi sil** ile duyuru alanlarını ve kişisel listeyi temizleyebilirsin.
+
+İstersen **Claude’da aç** ile hazırlanan istemi panoya kopyalayıp kendi Claude hesabına yapıştır. Tarayıcı panoya yazamazsa istemi elle kopyalayabilirsin. Claude’un JSON yanıtını **Claude’un yanıtını yapıştır** alanından içe aktar. Geçerli tarih ve duyurudan birebir alıntı içeren olaylar **Claude** rozetiyle önizlemeye eklenir. Duyuru ayıklaması için API anahtarı gerekmez. Metni Claude’a yapıştırırsan Claude ile paylaşmış olursun. Takvime eklemeden önce tarihleri resmi duyurudan kontrol et.
+
+Tarayıcı mantığının testlerini Node.js 22 ile `npm test` komutundan çalıştırabilirsin.
+
 ## Kurulum
 
 Python 3.10 veya üzeri yeterli. Proje dizininde aşağıdaki komutlarla çalıştırabilirsin.

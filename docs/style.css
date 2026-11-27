@@ -77,3 +77,24 @@ fieldset { min-width: 0; margin: 0; border: 1px solid var(--cizgi); border-radiu
 .onay { background: var(--onay); color: var(--onay-metin); }
 .meta { color: var(--ikincil); }
 .islemler { display: flex; flex-wrap: wrap; gap: .65rem 1rem; align-items: center; margin-top: .75rem; }
+.duyuru-blok { margin-top: 1.25rem; }
+.duyuru-tarih { max-width: 18rem; }
+.onay-kutusu { display: flex; align-items: center; gap: .5rem; }
+.onay-kutusu input { width: auto; min-height: auto; margin: 0; }
+.duyuru-tablo { width: 100%; table-layout: fixed; border-collapse: collapse; }
+.duyuru-tablo caption { text-align: left; font-weight: 650; padding-bottom: .5rem; }
+.duyuru-tablo th, .duyuru-tablo td {
+  text-align: left;
+  vertical-align: top;
+  border: 1px solid var(--cizgi);
+  background: var(--yuzey);
+  padding: .75rem;
+  overflow-wrap: anywhere;
+}
+.duyuru-tablo label + label { margin-top: .45rem; }
+.duyuru-tablo blockquote { margin: .6rem 0; white-space: pre-wrap; }
+@media (max-width: 38rem) {
+  .duyuru-tablo thead { position: absolute; clip-path: inset(50%); width: 1px; height: 1px; overflow: hidden; }
+  .duyuru-tablo td { display: block; }
+  .duyuru-tablo td + td { border-top: 0; margin-bottom: .75rem; }
+}

@@ -1,119 +1,5 @@
-"use strict";
-
-const UYARI = "Tarihleri resmi kaynaktan kontrol edin.";
-const GUN = 86400000;
-
-function normalize(metin) {
-  return metin.toLocaleLowerCase("tr").replaceAll("ı", "i")
-    .normalize("NFKD").replace(/\p{M}/gu, "");
-}
-
-function filtrele(kayitlar, { ogrenim, kategori, arama = "" }) {
-  const kelimeler = normalize(arama).trim().split(/\s+/);
-  return kayitlar.filter(k => {
-    if (ogrenim && ogrenim !== "hepsi" && !k.ogrenim.includes(ogrenim) && !k.ogrenim.includes("hepsi")) return false;
-    if (kategori && k.kategori !== kategori) return false;
-    const metin = normalize([k.id, k.baslik, k.kurum, k.kategori, k.notlar, ...k.belgeler].join(" "));
-    return kelimeler.every(kelime => metin.includes(kelime));
-  });
-}
-
-function karsilastir(a, b) {
-  return a < b ? -1 : Number(a > b);
-}
-
-function yaklasan(kayitlar, bugun) {
-  return kayitlar.flatMap(k => {
-    const tarihler = [k.baslangic, k.bitis].filter(tarih => tarih && tarih >= bugun).sort();
-    if (!tarihler.length) return [];
-    return [{ ...k, kalanGun: (Date.parse(tarihler[0]) - Date.parse(bugun)) / GUN }];
-  }).sort((a, b) => a.kalanGun - b.kalanGun || karsilastir(a.id, b.id));
-}
-
-const ONCELIKLER = ["yüksek", "normal", "düşük"];
-
-function oncelik(kategori, { yurt, burs, sinif }) {
-  if (kategori === "kyk-yurt" && yurt) {
-    return yurt === "evet"
-      ? [2, "KYK yurdunda kalıyorsun. Başvurunun durumuna uygunluğunu kontrol et."]
-      : [0, "KYK yurdunda kalmıyorsun. Yurt başvurusu koşullarını incele."];
-  }
-  if (["kyk-burs", "vgm"].includes(kategori) && burs) {
-    return burs === "evet"
-      ? [2, "Mevcut bursunla birlikte başvuru koşullarını kontrol et."]
-      : [0, "Burs almadığın için bu başvurunun koşullarını öncelikle incele."];
-  }
-  if (kategori === "gecis" && sinif === 1) {
-    return [0, "İlk sınıftaysan geçiş koşullarını ve başvuru dönemini erkenden incele."];
-  }
-  return [1, "Öğrenim düzeyine uygun."];
-}
-
-function kontrolListesi(kayitlar, bugun, profil) {
-  return filtrele(kayitlar, { ogrenim: profil.ogrenim })
-    .filter(k => !(k.bitis || k.baslangic) || (k.bitis || k.baslangic) >= bugun)
-    .map(k => {
-      const [sira, neden] = oncelik(k.kategori, profil);
-      return { ...k, sira, neden };
-    })
-    .sort((a, b) => a.sira - b.sira || Number(!a.bitis) - Number(!b.bitis)
-      || karsilastir(a.bitis || a.baslangic || "", b.bitis || b.baslangic || "")
-      || karsilastir(a.id, b.id));
-}
-
-function istanbulBugun(simdi = new Date()) {
-  const parcalar = new Intl.DateTimeFormat("en", {
-    timeZone: "Europe/Istanbul", year: "numeric", month: "2-digit", day: "2-digit",
-  }).formatToParts(simdi);
-  return ["year", "month", "day"].map(tur => parcalar.find(p => p.type === tur).value).join("-");
-}
-
-function icsMetin(metin) {
-  return metin.replaceAll("\\", "\\\\").replace(/\r\n|\r|\n/g, "\\n")
-    .replaceAll(";", "\\;").replaceAll(",", "\\,");
-}
-
-function katla(satir) {
-  const encoder = new TextEncoder();
-  const parcalar = [];
-  let parca = "";
-  let uzunluk = 0;
-  for (const karakter of satir) {
-    const oktet = encoder.encode(karakter).length;
-    if (uzunluk + oktet > 75) {
-      parcalar.push(parca);
-      parca = " ";
-      uzunluk = 1;
-    }
-    parca += karakter;
-    uzunluk += oktet;
-  }
-  return [...parcalar, parca].join("\r\n");
-}
-
-function kayitIcs(k, guncelleme) {
-  const ilk = k.baslangic || k.bitis;
-  if (!ilk) return "";
-  const son = new Date(Date.parse(k.bitis || ilk) + GUN).toISOString().slice(0, 10);
-  const tarih = deger => deger.replaceAll("-", "");
-  const baslik = icsMetin((k.dogrulandi ? "" : "⚠ ") + k.baslik);
-  const aciklama = icsMetin([k.notlar, `Kaynak: ${k.kaynak_url}`, UYARI].filter(Boolean).join("\n"));
-  return [
-    "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Burs Takvimi//TR", "CALSCALE:GREGORIAN",
-    "BEGIN:VEVENT", `UID:${icsMetin(k.id + "@burs-takvimi")}`,
-    `DTSTAMP:${tarih(guncelleme)}T000000Z`, `DTSTART;VALUE=DATE:${tarih(ilk)}`,
-    `DTEND;VALUE=DATE:${tarih(son)}`, `SUMMARY:${baslik}`, `DESCRIPTION:${aciklama}`,
-    `URL:${k.kaynak_url}`, "BEGIN:VALARM", "ACTION:DISPLAY", "TRIGGER;RELATED=END:-P4D",
-    `DESCRIPTION:${baslik}`, "END:VALARM", "END:VEVENT", "END:VCALENDAR", "",
-  ].map(katla).join("\r\n");
-}
-
-function claudePrompt(kayitlar) {
-  return [
-    "Aşağıdaki burs, yurt, staj ve öğrenim takvimi kayıtlarını Türkçe özetle. Başvuru adımlarını ve önemli tarihleri belirt. Doğrulanmamış tarihleri uyarıyla işaretle ve resmi kaynakları göster.",
-    ...kayitlar.map(k => `- ${k.baslik} | Başlangıç ${k.baslangic ?? "belirtilmemiş"}, bitiş ${k.bitis ?? "belirtilmemiş"} | ${k.dogrulandi ? "Doğrulandı" : "Doğrulanmadı"} | ${k.kaynak_url}`),
-  ].join("\n");
-}
+import { SINIR, TURLER, duyuruAyikla, duyuruIstemi, claudeYaniti, duyuruIcs, olayGecerli, olayKimligi, tarihGecerli } from "./lib/duyuru.js";
+import { filtrele, yaklasan, kontrolListesi, istanbulBugun, kayitIcs, claudePrompt, ONCELIKLER } from "./lib/takvim.js";
 
 function baslat() {
   const bul = id => document.getElementById(id);
@@ -121,7 +7,7 @@ function baslat() {
   const kategori = bul("kategori");
   const arama = bul("arama");
   const kontrol = bul("kontrol");
-  const sekmeler = [bul("yaklasan"), bul("tumu"), kontrol];
+  const sekmeler = [bul("yaklasan"), bul("tumu"), kontrol, bul("duyuru")];
   const liste = bul("kayitlar");
   const sor = bul("claude");
   let secili = sekmeler[0];
@@ -158,11 +44,11 @@ function baslat() {
     return eleman;
   }
 
-  function indir(k) {
-    const url = URL.createObjectURL(new Blob([kayitIcs(k, veri.updated)], { type: "text/calendar;charset=utf-8" }));
+  function indir(metin, dosya) {
+    const url = URL.createObjectURL(new Blob([metin], { type: "text/calendar;charset=utf-8" }));
     const baglanti = document.createElement("a");
     baglanti.href = url;
-    baglanti.download = `${k.id}.ics`;
+    baglanti.download = dosya;
     document.body.append(baglanti);
     baglanti.click();
     baglanti.remove();
@@ -179,6 +65,10 @@ function baslat() {
     const durum = ekle(satir, "div", "");
     ekle(durum, "span", k.dogrulandi ? "Doğrulandı" : "⚠ Doğrulanmadı",
       k.dogrulandi ? "etiket onay" : "etiket supheli");
+    if (k.kisisel) {
+      durum.append(" ");
+      ekle(durum, "span", "Benim eklediğim", "etiket onay");
+    }
     if (k.kalanGun !== undefined) {
       durum.append(" ");
       ekle(durum, "span", k.kalanGun === 0 ? "Bugün" : `${k.kalanGun} gün kaldı`,
@@ -197,21 +87,47 @@ function baslat() {
     const dugme = ekle(islemler, "button", "Takvimime ekle");
     dugme.type = "button";
     if (k.baslangic || k.bitis) {
-      dugme.addEventListener("click", () => indir(k));
+      dugme.addEventListener("click", () => {
+        const ics = k.kisisel ? duyuruIcs([k]) : kayitIcs(k, veri.updated);
+        indir(ics, `${k.id}.ics`);
+      });
     } else {
       dugme.disabled = true;
       ekle(islemler, "span", "Tarih gerekli", "meta");
+    }
+    if (k.kisisel) {
+      const sil = ekle(islemler, "button", "Sil");
+      sil.type = "button";
+      sil.setAttribute("aria-label", `${k.baslik} kaydını sil`);
+      sil.addEventListener("click", () => {
+        const kalan = new Map(kisisel);
+        kalan.delete(k.id);
+        if (depoYaz(kalan)) {
+          kisisel = kalan;
+          goster();
+          bul("durum").textContent += " · Kişisel kayıt silindi.";
+          bul("panel").focus();
+        } else {
+          bul("durum").textContent = "Kişisel kayıt silinemedi. Tarayıcı depolamasına erişilemiyor.";
+        }
+      });
     }
   }
 
   function goster() {
     bul("elle-kopya").hidden = true;
     bul("kopya-durum").textContent = "";
-    if (!veri) return;
+    if (secili.id === "duyuru") return;
     const bugun = istanbulBugun();
-    eslesen = filtrele(veri.entries, { ogrenim: ogrenim.value, kategori: kategori.value, arama: arama.value });
+    eslesen = filtrele(veri?.entries ?? [], { ogrenim: ogrenim.value, kategori: kategori.value, arama: arama.value });
     let gorunen = eslesen;
-    if (secili === sekmeler[0]) gorunen = yaklasan(eslesen, bugun);
+    if (secili === sekmeler[0]) {
+      const benim = [...kisisel].map(([id, olay]) => ({
+        ...olay, id, kisisel: true, kurum: TURLER[olay.tur], dogrulandi: false,
+        belgeler: [], ogrenim: ["hepsi"], kategori: "diger", kaynak_url: "", notlar: olay.not,
+      }));
+      gorunen = yaklasan([...eslesen, ...filtrele(benim, { arama: arama.value })], bugun);
+    }
     if (secili === kontrol) {
       gorunen = ogrenim.value === "hepsi" ? [] : kontrolListesi(eslesen, bugun, {
         ogrenim: ogrenim.value, yurt: bul("yurt").value, burs: bul("burs").value,
@@ -223,6 +139,9 @@ function baslat() {
       ? "Kontrol listeni görmek için öğrenim düzeyini seç."
       : (gorunen.length ? `${gorunen.length} kayıt` : "Uygun kayıt bulunamadı.");
     gorunen.forEach(kart);
+    if (!veri) {
+      bul("durum").textContent += takvimHatasi ? " · Yayın takvimi yüklenemedi." : " · Yayın takvimi yükleniyor…";
+    }
     sor.disabled = !eslesen.length;
   }
 
@@ -232,7 +151,10 @@ function baslat() {
       sekme.setAttribute("aria-selected", String(sekme === secili));
       sekme.tabIndex = sekme === secili ? 0 : -1;
     }
-    bul("panel").setAttribute("aria-labelledby", secili.id);
+    const duyuruAcik = secili.id === "duyuru";
+    for (const id of ["panel", "takvim-filtreleri", "takvim-claude"]) bul(id).hidden = duyuruAcik;
+    bul("duyuru-panel").hidden = !duyuruAcik;
+    if (!duyuruAcik) bul("panel").setAttribute("aria-labelledby", secili.id);
     bul("profil").hidden = secili !== kontrol;
     goster();
   }
@@ -278,6 +200,14 @@ function baslat() {
     bul("prompt").select();
   });
 
+  const { listeyiOku, depoYaz } = duyuruArayuzu(bul, ekle, indir, yeniListe => {
+    kisisel = yeniListe;
+    goster();
+  }, () => kisisel);
+  let kisisel = listeyiOku();
+  let takvimHatasi = false;
+  goster();
+
   fetch("./takvim.json")
     .then(yanit => {
       if (!yanit.ok) throw new Error("Takvim yüklenemedi");
@@ -288,7 +218,8 @@ function baslat() {
       goster();
     })
     .catch(() => {
-      bul("durum").textContent = "Takvim yüklenemedi. Bağlantını kontrol edip sayfayı yenile.";
+      takvimHatasi = true;
+      goster();
     });
 
   if ("serviceWorker" in navigator) {
@@ -298,7 +229,266 @@ function baslat() {
   }
 }
 
-if (typeof module !== "undefined") {
-  module.exports = { normalize, filtrele, yaklasan, kontrolListesi, istanbulBugun, kayitIcs, claudePrompt };
+function duyuruArayuzu(bul, ekle, indir, listeyiGuncelle, listeyiGetir) {
+  const anahtar = "burs-takvimi-kisisel";
+  const metin = bul("duyuru-metin");
+  const onay = bul("duyuru-onay");
+  const durum = bul("duyuru-durum");
+  const depoDurum = bul("duyuru-depo-durum");
+  const islemDurum = bul("duyuru-islem-durum");
+  const govde = bul("duyuru-olaylar");
+  let satirlar = [];
+  let istemSayaci = 0;
+
+  function listeyiOku() {
+    try {
+      const kayitlar = JSON.parse(localStorage.getItem(anahtar));
+      onay.checked = Array.isArray(kayitlar);
+      return new Map((onay.checked ? kayitlar : [])
+        .filter(olay => olayGecerli(olay) && typeof olay.alinti === "string" && typeof olay.not === "string")
+        .map(olay => [olayKimligi(olay), olay]));
+    } catch {
+      return new Map();
+    }
+  }
+
+  function depoYaz(liste) {
+    if (!onay.checked) return true;
+    try {
+      localStorage.setItem(anahtar, JSON.stringify([...liste.values()]));
+      return true;
+    } catch {
+      return false;
+    }
+  }
+
+  function alan(ebeveyn, ad, tip, deger) {
+    const etiket = ekle(ebeveyn, "label", ad);
+    const girdi = ekle(etiket, "input", "");
+    girdi.type = tip;
+    girdi.value = deger ?? "";
+    if (tip === "date") {
+      girdi.min = "0001-01-01";
+      girdi.max = "9999-12-31";
+    }
+    return girdi;
+  }
+
+  function satirEkle(olay) {
+    const satir = ekle(govde, "tr", "");
+    const duzenle = ekle(satir, "td", "");
+    const kaynak = ekle(satir, "td", "");
+    const secim = alan(duzenle, "Olayı seç", "checkbox", "");
+    secim.parentElement.className = "onay-kutusu";
+    secim.setAttribute("aria-label", `${olay.baslik} olayını seç`);
+    secim.checked = true;
+    const baslik = alan(duzenle, "Başlık", "text", olay.baslik);
+    baslik.maxLength = 200;
+    baslik.required = true;
+    const baslangic = alan(duzenle, "Başlangıç", "date", olay.baslangic);
+    baslangic.required = true;
+    const bitis = alan(duzenle, "Bitiş (isteğe bağlı)", "date", olay.bitis);
+    const saat = alan(duzenle, "Türkiye saati (isteğe bağlı)", "time", olay.saat);
+    const tur = ekle(ekle(duzenle, "label", "Tür"), "select", "");
+    for (const [deger, ad] of Object.entries(TURLER)) ekle(tur, "option", ad).value = deger;
+    tur.value = olay.tur;
+    ekle(kaynak, "span", "Doğrulanmadı", "etiket supheli");
+    if (olay.claude) {
+      kaynak.append(" ");
+      ekle(kaynak, "span", "Claude", "etiket onay");
+    }
+    ekle(kaynak, "blockquote", olay.alinti);
+    if (olay.not) ekle(kaynak, "p", olay.not, "meta");
+    satirlar.push({ olay, secim, baslik, baslangic, bitis, saat, tur });
+    bul("duyuru-onizleme").hidden = false;
+  }
+
+  function onizlemeyiSil() {
+    govde.replaceChildren();
+    satirlar = [];
+    bul("duyuru-onizleme").hidden = true;
+    bul("duyuru-listeler").replaceChildren();
+    bul("duyuru-listeler").hidden = true;
+    islemDurum.textContent = "";
+  }
+
+  function secilenler() {
+    const olaylar = new Map();
+    islemDurum.textContent = "";
+    for (const satir of satirlar) {
+      if (!satir.secim.checked) continue;
+      const { olay, baslik, baslangic, bitis, saat, tur } = satir;
+      if (![baslik, baslangic, bitis, saat].every(girdi => girdi.reportValidity())) {
+        islemDurum.textContent = "Seçili olayın alanlarını kontrol et.";
+        return [];
+      }
+      const kayit = {
+        ...olay, baslik: baslik.value.trim(), baslangic: baslangic.value,
+        bitis: bitis.value || null, saat: saat.value || null, tur: tur.value,
+      };
+      if (!olayGecerli(kayit)) {
+        islemDurum.textContent = "Seçili olay için başlık ve geçerli bir tarih aralığı gir.";
+        (kayit.baslik ? bitis : baslik).focus();
+        return [];
+      }
+      olaylar.set(olayKimligi(kayit), kayit);
+    }
+    if (!olaylar.size) islemDurum.textContent = "En az bir olay seç.";
+    return [...olaylar.values()];
+  }
+
+  function duyuruHazir() {
+    const tarih = bul("duyuru-tarih").value;
+    if (!metin.value.trim() || metin.value.length > SINIR) {
+      durum.textContent = "En fazla 100.000 karakterlik bir duyuru metni gir.";
+      metin.focus();
+      return false;
+    }
+    if (tarih && !tarihGecerli(tarih)) {
+      durum.textContent = "Geçerli bir duyuru tarihi gir.";
+      bul("duyuru-tarih").focus();
+      return false;
+    }
+    return true;
+  }
+
+  metin.addEventListener("input", () => {
+    istemSayaci++;
+    bul("duyuru-istem").value = "";
+    bul("duyuru-elle-kopya").hidden = true;
+    durum.textContent = "";
+    onizlemeyiSil();
+  });
+  bul("duyuru-ayikla").addEventListener("click", () => {
+    if (!duyuruHazir()) return;
+    const bugun = istanbulBugun();
+    const { olaylar, atilan } = duyuruAyikla(metin.value, bul("duyuru-tarih").value || bugun, bugun);
+    // Önceden içe aktarılan Claude satırlarını ve düzenlemelerini koru.
+    for (const satir of satirlar.filter(satir => !satir.olay.claude)) satir.secim.closest("tr").remove();
+    satirlar = satirlar.filter(satir => satir.olay.claude);
+    olaylar.forEach(satirEkle);
+    bul("duyuru-onizleme").hidden = !satirlar.length;
+    islemDurum.textContent = "";
+    durum.textContent = `${olaylar.length} olay bulundu. ${atilan} geçersiz tarih atlandı.`;
+  });
+
+  bul("duyuru-claude").addEventListener("click", async () => {
+    if (!duyuruHazir()) return;
+    const sira = ++istemSayaci;
+    const istem = duyuruIstemi(metin.value, bul("duyuru-tarih").value || undefined);
+    bul("duyuru-elle-kopya").hidden = true;
+    let kopyalama;
+    try {
+      kopyalama = navigator.clipboard?.writeText(istem);
+    } catch {
+      // Eşzamanlı pano hatasında da elle kopyalama seçeneğini göster.
+    }
+    window.open("https://claude.ai/new", "_blank", "noopener");
+    try {
+      if (kopyalama) {
+        await kopyalama;
+        if (sira === istemSayaci) durum.textContent = "İstem panoya kopyalandı. Claude’a yapıştırabilirsin.";
+        return;
+      }
+    } catch {
+      // Pano erişimi reddedildiğinde aşağıdaki alanı göster.
+    }
+    if (sira !== istemSayaci) return;
+    durum.textContent = "Panoya otomatik kopyalanamadı.";
+    const alan = bul("duyuru-istem");
+    alan.value = istem;
+    bul("duyuru-elle-kopya").hidden = false;
+    alan.focus();
+    alan.select();
+  });
+
+  bul("duyuru-aktar").addEventListener("click", () => {
+    if (!duyuruHazir()) return;
+    const sonuc = claudeYaniti(bul("duyuru-yanit").value, metin.value);
+    if (!sonuc) {
+      durum.textContent = "Geçerli bir Claude JSON yanıtı bulunamadı. Sınır 100.000 karakter.";
+      return;
+    }
+    const aktarilan = new Set(satirlar.filter(satir => satir.olay.claude).map(satir => olayKimligi(satir.olay)));
+    let eklenen = 0;
+    for (const olay of sonuc.olaylar) {
+      const id = olayKimligi(olay);
+      if (aktarilan.has(id)) continue;
+      aktarilan.add(id);
+      satirEkle(olay);
+      eklenen++;
+    }
+    const listeler = bul("duyuru-listeler");
+    listeler.replaceChildren();
+    for (const [ad, maddeler] of [["Claude’un yapılacaklar listesi", sonuc.yapilacaklar],
+      ["Resmi kaynaktan doğrulanacaklar", sonuc.dogrulanacaklar]]) {
+      if (!maddeler.length) continue;
+      ekle(listeler, "h2", ad);
+      const liste = ekle(listeler, "ul", "");
+      maddeler.forEach(madde => ekle(liste, "li", madde));
+    }
+    listeler.hidden = !listeler.childElementCount;
+    durum.textContent = `${eklenen} Claude olayı eklendi. ${sonuc.atilan} geçersiz öğe atlandı.`;
+  });
+
+  bul("duyuru-indir").addEventListener("click", () => {
+    const olaylar = secilenler();
+    if (!olaylar.length) return;
+    indir(duyuruIcs(olaylar), "duyuru-takvimi.ics");
+    islemDurum.textContent = `${olaylar.length} olay için takvim dosyası hazırlandı.`;
+  });
+
+  bul("duyuru-kaydet").addEventListener("click", () => {
+    const olaylar = secilenler();
+    if (!olaylar.length) return;
+    const mevcut = listeyiGetir();
+    const liste = new Map(mevcut);
+    for (const olay of olaylar) liste.set(olayKimligi(olay), olay);
+    if (!depoYaz(liste)) {
+      islemDurum.textContent = "Tarayıcı depolamasına kaydedilemedi. Saklama onayını kaldırıp bu oturumda ekleyebilirsin.";
+      return;
+    }
+    listeyiGuncelle(liste);
+    const eklenen = liste.size - mevcut.size;
+    islemDurum.textContent = `${eklenen} yeni olay eklendi. Güncel olayları Yaklaşan sekmesinde görebilirsin.`;
+  });
+
+  function depoyuSil() {
+    try {
+      localStorage.removeItem(anahtar);
+      onay.checked = false;
+      return true;
+    } catch {
+      depoDurum.textContent = "Tarayıcı depolamasındaki veriler silinemedi.";
+      return false;
+    }
+  }
+
+  onay.addEventListener("change", () => {
+    if (onay.checked) {
+      if (depoYaz(listeyiGetir())) depoDurum.textContent = "Kişisel liste bu tarayıcıda saklanıyor.";
+      else {
+        onay.checked = false;
+        depoDurum.textContent = "Tarayıcı depolamasına kaydedilemedi.";
+      }
+    } else if (depoyuSil()) {
+      depoDurum.textContent = "Saklanan liste silindi. Bu oturumdaki kayıtları kullanabilirsin.";
+    } else {
+      onay.checked = true;
+    }
+  });
+
+  bul("duyuru-sil").addEventListener("click", () => {
+    const silindi = depoyuSil();
+    listeyiGuncelle(new Map());
+    metin.value = "";
+    bul("duyuru-tarih").value = "";
+    bul("duyuru-yanit").value = "";
+    metin.dispatchEvent(new Event("input"));
+    if (silindi) depoDurum.textContent = "Duyuru verileri silindi.";
+  });
+
+  return { listeyiOku, depoYaz };
 }
-if (typeof document !== "undefined") baslat();
+
+baslat();

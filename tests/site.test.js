@@ -1,11 +1,9 @@
-"use strict";
+import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
+import { test } from "node:test";
+import { normalize, filtrele, yaklasan, kontrolListesi, istanbulBugun, kayitIcs, claudePrompt } from "../docs/lib/takvim.js";
 
-const assert = require("node:assert/strict");
-const { readFileSync } = require("node:fs");
-const path = require("node:path");
-const { test } = require("node:test");
-const { normalize, filtrele, yaklasan, kontrolListesi, istanbulBugun, kayitIcs, claudePrompt } = require("../docs/app");
-const veri = require("../docs/takvim.json");
+const veri = JSON.parse(readFileSync(new URL("../docs/takvim.json", import.meta.url), "utf8"));
 
 function kayit(id, alanlar = {}) {
   return {
@@ -50,7 +48,7 @@ test("kontrol listesi MCP profil kurallarını ve son tarih sırasını uygular"
 });
 
 test("tek kayıt ICS etkinlikleri yayın akışıyla bayt düzeyinde eşleşir", () => {
-  const akis = readFileSync(path.join(__dirname, "../docs/takvim.ics"), "utf8");
+  const akis = readFileSync(new URL("../docs/takvim.ics", import.meta.url), "utf8");
   for (const k of veri.entries) {
     const cikti = kayitIcs(k, veri.updated);
     if (!k.baslangic && !k.bitis) {
