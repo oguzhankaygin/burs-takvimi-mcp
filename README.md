@@ -7,6 +7,7 @@ Türk üniversite öğrencileri için yerel bir MCP sunucusu. Claude, KYK burs v
 [Burs ve Yurt Takvimi’ni aç](https://oguzhankaygin.github.io/burs-takvimi-mcp/).
 
 Telefonda tarayıcı menüsündeki **Ana ekrana ekle** (iPhone’da Paylaş → Ana Ekrana Ekle) seçeneğiyle uygulama gibi açabilirsiniz; bir kez açıldıktan sonra internetsiz de çalışır.
+
 Takvimi kurulum ve hesap gerekmeksizin inceleyebilir, başvuruları filtreleyebilir ve
 kişisel kontrol listeni oluşturabilirsin. Tek bir kaydı indirebilir veya tüm takvime
 abone olabilirsin. İlk çevrimiçi yüklemeden sonra takvim çevrimdışı açılabilir.
