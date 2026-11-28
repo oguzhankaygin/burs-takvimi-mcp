@@ -106,7 +106,7 @@ BURS_TAKVIMI_TODAY=2026-11-24 python3 -m burs_takvimi cli yaklasan --gun 60
 
 ## Sınırlamalar
 
-- Veri dosyası 22 kayıt içerir; 17’si resmi duyurularla karşılaştırılıp `dogrulandi: true` yapıldı (ÖSYM, AÖF, Ulusal Staj Programı, TÜBİTAK 2209-A). KYK burs/kredi ve yurt, VGM, Erasmus+ ve yatay geçiş kayıtları henüz doğrulanmadı; araç bu kayıtlarda "⚠ doğrulanmamış" uyarısı gösterir.
+- Veri dosyası 22 kayıt içerir; 18’i resmi duyurularla karşılaştırılıp `dogrulandi: true` yapıldı (ÖSYM, AÖF, VGM, Ulusal Staj Programı, TÜBİTAK 2209-A). KYK burs/kredi ve yurt, Erasmus+ ve yatay geçiş kayıtları henüz doğrulanmadı; araç bu kayıtlarda "⚠ doğrulanmamış" uyarısı gösterir.
 - Sunucu yerel dosyayı başlangıçta yükler. Veri değiştiğinde yeniden başlat. Resmi duyuruları otomatik çekme ve yıllık olaylara tarih atama bu sürümün kapsamı dışındadır.
 - Yaklaşan tarihler sorgusu bugünü ve pencerenin son gününü kapsar. Varsayılan gün hesabı Türkiye saatine (UTC+3) göre yapılır.
 - Kontrol listesi öğrenim düzeyine göre filtreler, geçmiş tarihli kayıtları eler ve öğrenci profilinden öncelik belirler. Erasmus+ ve geçiş tarihleri kurum ve programa göre değişebilir. Başvuru koşullarını ve son tarihleri resmi duyurudan kontrol et.

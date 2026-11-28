@@ -24,15 +24,17 @@ UID:vgm-burs@burs-takvimi
 DTSTAMP:20261128T000000Z
 DTSTART;VALUE=DATE:20261022
 DTEND;VALUE=DATE:20261101
-SUMMARY:⚠ VGM yükseköğrenim bursu başvurusu
-DESCRIPTION:Sonuçların 23 Kasım 2026'da ilan edildiği bildiriliyor. Ara
- ştırma bulgusu (2026-11-24)\; resmi duyurudan henüz doğrulanmadı.\nKa
- ynak: https://www.vgm.gov.tr/\nTarihleri resmi kaynaktan kontrol edin.
-URL:https://www.vgm.gov.tr/
+SUMMARY:VGM yükseköğrenim bursu başvurusu
+DESCRIPTION:2026-2027 yükseköğrenim başvuruları 22 Ekim 2026 10:00 –
+  31 Ekim 2026 23:59 arasında alındı\; sonuçlar 23 Kasım 2026'da açı
+ klandı. VGM burs başvuruları sayfasından doğrulandı (2026-11-28).\nK
+ aynak: https://www.vgm.gov.tr/sayfalar/burs-basvurulari\nTarihleri resmi k
+ aynaktan kontrol edin.
+URL:https://www.vgm.gov.tr/sayfalar/burs-basvurulari
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER;RELATED=END:-P4D
-DESCRIPTION:⚠ VGM yükseköğrenim bursu başvurusu
+DESCRIPTION:VGM yükseköğrenim bursu başvurusu
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
