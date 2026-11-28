@@ -77,7 +77,7 @@ UID:aof-sinav@burs-takvimi
 DTSTAMP:20261128T000000Z
 DTSTART;VALUE=DATE:20261205
 DTEND;VALUE=DATE:20261207
-SUMMARY:AÖF dönem sınavı
+SUMMARY:AÖF güz dönemi ara sınavı
 DESCRIPTION:AÖF güz dönemi ara sınavı 5-6 Aralık 2026. Anadolu Ünive
  rsitesi 2026-2027 Türkiye programları akademik takviminden doğrulandı 
  (2026-11-28). Sınav giriş belgesi ve sınav yeri öğrenci bilgi sistemi
@@ -89,7 +89,7 @@ URL:https://www.anadolu.edu.tr/acikogretim/acikogretim-akademik-takvim/turk
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER;RELATED=END:-P4D
-DESCRIPTION:AÖF dönem sınavı
+DESCRIPTION:AÖF güz dönemi ara sınavı
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
@@ -97,7 +97,7 @@ UID:aof-sinav-merkezi-donem-sonu@burs-takvimi
 DTSTAMP:20261128T000000Z
 DTSTART;VALUE=DATE:20261206
 DTEND;VALUE=DATE:20261207
-SUMMARY:AÖF dönem sonu sınav merkezi tercihi son günü
+SUMMARY:AÖF güz dönem sonu sınav merkezi tercihi son günü
 DESCRIPTION:Bu tarihe kadar sınav merkezi tercihi yapanlar güz dönemi d
  önem sonu sınavına (16-17 Ocak 2027) seçtikleri merkezde girebilir. Ak
  ademik takvimden doğrulandı (2026-11-28).\nKaynak: https://www.anadolu.e
@@ -108,7 +108,7 @@ URL:https://www.anadolu.edu.tr/acikogretim/acikogretim-akademik-takvim/turk
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER;RELATED=END:-P4D
-DESCRIPTION:AÖF dönem sonu sınav merkezi tercihi son günü
+DESCRIPTION:AÖF güz dönem sonu sınav merkezi tercihi son günü
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
@@ -128,6 +128,104 @@ BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER;RELATED=END:-P4D
 DESCRIPTION:AÖF güz dönem sonu sınavı
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aof-bahar-kayit-yenileme@burs-takvimi
+DTSTAMP:20261128T000000Z
+DTSTART;VALUE=DATE:20270208
+DTEND;VALUE=DATE:20270223
+SUMMARY:AÖF bahar dönemi kayıt yenileme (ekle-sil)
+DESCRIPTION:Bahar dönemi kayıt yenileme ve ders ekle-sil 8-22 Şubat 2027
+ . Anadolu Üniversitesi 2026-2027 Türkiye programları akademik takvimind
+ en doğrulandı (2026-11-28).\nKaynak: https://www.anadolu.edu.tr/acikogre
+ tim/acikogretim-akademik-takvim/turkiye-programlari-2026-2027-ogretim-yili
+ -akademik-takvim\nTarihleri resmi kaynaktan kontrol edin.
+URL:https://www.anadolu.edu.tr/acikogretim/acikogretim-akademik-takvim/turk
+ iye-programlari-2026-2027-ogretim-yili-akademik-takvim
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=END:-P4D
+DESCRIPTION:AÖF bahar dönemi kayıt yenileme (ekle-sil)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aof-sinav-merkezi-bahar-ara@burs-takvimi
+DTSTAMP:20261128T000000Z
+DTSTART;VALUE=DATE:20270222
+DTEND;VALUE=DATE:20270223
+SUMMARY:AÖF bahar ara sınavı sınav merkezi tercihi son günü
+DESCRIPTION:Bu tarihe kadar sınav merkezi tercihi yapanlar bahar dönemi a
+ ra sınavına (10-11 Nisan 2027) seçtikleri merkezde girebilir. Anadolu 
+ Üniversitesi 2026-2027 Türkiye programları akademik takviminden doğrul
+ andı (2026-11-28).\nKaynak: https://www.anadolu.edu.tr/acikogretim/acikog
+ retim-akademik-takvim/turkiye-programlari-2026-2027-ogretim-yili-akademik-
+ takvim\nTarihleri resmi kaynaktan kontrol edin.
+URL:https://www.anadolu.edu.tr/acikogretim/acikogretim-akademik-takvim/turk
+ iye-programlari-2026-2027-ogretim-yili-akademik-takvim
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=END:-P4D
+DESCRIPTION:AÖF bahar ara sınavı sınav merkezi tercihi son günü
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aof-bahar-ara@burs-takvimi
+DTSTAMP:20261128T000000Z
+DTSTART;VALUE=DATE:20270410
+DTEND;VALUE=DATE:20270412
+SUMMARY:AÖF bahar dönemi ara sınavı
+DESCRIPTION:AÖF bahar dönemi ara sınavı 10-11 Nisan 2027. Sınav giriş
+  belgesi ve sınav yeri öğrenci bilgi sisteminden alınır. Anadolu Üni
+ versitesi 2026-2027 Türkiye programları akademik takviminden doğruland
+ ı (2026-11-28).\nKaynak: https://www.anadolu.edu.tr/acikogretim/acikogret
+ im-akademik-takvim/turkiye-programlari-2026-2027-ogretim-yili-akademik-tak
+ vim\nTarihleri resmi kaynaktan kontrol edin.
+URL:https://www.anadolu.edu.tr/acikogretim/acikogretim-akademik-takvim/turk
+ iye-programlari-2026-2027-ogretim-yili-akademik-takvim
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=END:-P4D
+DESCRIPTION:AÖF bahar dönemi ara sınavı
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aof-sinav-merkezi-bahar-donem-sonu@burs-takvimi
+DTSTAMP:20261128T000000Z
+DTSTART;VALUE=DATE:20270411
+DTEND;VALUE=DATE:20270412
+SUMMARY:AÖF bahar dönem sonu sınav merkezi tercihi son günü
+DESCRIPTION:Bu tarihe kadar sınav merkezi tercihi yapanlar bahar dönemi d
+ önem sonu sınavına (29-30 Mayıs 2027) seçtikleri merkezde girebilir. 
+ Anadolu Üniversitesi 2026-2027 Türkiye programları akademik takviminden
+  doğrulandı (2026-11-28).\nKaynak: https://www.anadolu.edu.tr/acikogreti
+ m/acikogretim-akademik-takvim/turkiye-programlari-2026-2027-ogretim-yili-a
+ kademik-takvim\nTarihleri resmi kaynaktan kontrol edin.
+URL:https://www.anadolu.edu.tr/acikogretim/acikogretim-akademik-takvim/turk
+ iye-programlari-2026-2027-ogretim-yili-akademik-takvim
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=END:-P4D
+DESCRIPTION:AÖF bahar dönem sonu sınav merkezi tercihi son günü
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aof-bahar-donem-sonu@burs-takvimi
+DTSTAMP:20261128T000000Z
+DTSTART;VALUE=DATE:20270529
+DTEND;VALUE=DATE:20270531
+SUMMARY:AÖF bahar dönem sonu sınavı
+DESCRIPTION:AÖF bahar dönemi dönem sonu sınavı 29-30 Mayıs 2027. Anad
+ olu Üniversitesi 2026-2027 Türkiye programları akademik takviminden do
+ ğrulandı (2026-11-28).\nKaynak: https://www.anadolu.edu.tr/acikogretim/a
+ cikogretim-akademik-takvim/turkiye-programlari-2026-2027-ogretim-yili-akad
+ emik-takvim\nTarihleri resmi kaynaktan kontrol edin.
+URL:https://www.anadolu.edu.tr/acikogretim/acikogretim-akademik-takvim/turk
+ iye-programlari-2026-2027-ogretim-yili-akademik-takvim
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=END:-P4D
+DESCRIPTION:AÖF bahar dönem sonu sınavı
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT

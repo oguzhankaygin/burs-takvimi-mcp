@@ -90,7 +90,7 @@
     },
     {
       "id": "aof-sinav",
-      "baslik": "AÖF dönem sınavı",
+      "baslik": "AÖF güz dönemi ara sınavı",
       "kurum": "Anadolu Üniversitesi",
       "kategori": "aof",
       "ogrenim": [
@@ -108,7 +108,7 @@
     },
     {
       "id": "aof-sinav-merkezi-donem-sonu",
-      "baslik": "AÖF dönem sonu sınav merkezi tercihi son günü",
+      "baslik": "AÖF güz dönem sonu sınav merkezi tercihi son günü",
       "kurum": "Anadolu Üniversitesi",
       "kategori": "aof",
       "ogrenim": [
@@ -175,6 +175,96 @@
       "tekrar": "yillik",
       "kontrol_tarihi": "2026-11-28",
       "dogrulandi": true,
+      "belgeler": []
+    },
+    {
+      "id": "aof-bahar-kayit-yenileme",
+      "baslik": "AÖF bahar dönemi kayıt yenileme (ekle-sil)",
+      "kurum": "Anadolu Üniversitesi",
+      "kategori": "aof",
+      "ogrenim": [
+        "onlisans",
+        "lisans"
+      ],
+      "baslangic": "2027-02-08",
+      "bitis": "2027-02-22",
+      "tekrar": "yillik",
+      "kaynak_url": "https://www.anadolu.edu.tr/acikogretim/acikogretim-akademik-takvim/turkiye-programlari-2026-2027-ogretim-yili-akademik-takvim",
+      "kontrol_tarihi": "2026-11-28",
+      "dogrulandi": true,
+      "notlar": "Bahar dönemi kayıt yenileme ve ders ekle-sil 8-22 Şubat 2027. Anadolu Üniversitesi 2026-2027 Türkiye programları akademik takviminden doğrulandı (2026-11-28).",
+      "belgeler": []
+    },
+    {
+      "id": "aof-sinav-merkezi-bahar-ara",
+      "baslik": "AÖF bahar ara sınavı sınav merkezi tercihi son günü",
+      "kurum": "Anadolu Üniversitesi",
+      "kategori": "aof",
+      "ogrenim": [
+        "onlisans",
+        "lisans"
+      ],
+      "baslangic": "2027-02-22",
+      "bitis": null,
+      "tekrar": "yillik",
+      "kaynak_url": "https://www.anadolu.edu.tr/acikogretim/acikogretim-akademik-takvim/turkiye-programlari-2026-2027-ogretim-yili-akademik-takvim",
+      "kontrol_tarihi": "2026-11-28",
+      "dogrulandi": true,
+      "notlar": "Bu tarihe kadar sınav merkezi tercihi yapanlar bahar dönemi ara sınavına (10-11 Nisan 2027) seçtikleri merkezde girebilir. Anadolu Üniversitesi 2026-2027 Türkiye programları akademik takviminden doğrulandı (2026-11-28).",
+      "belgeler": []
+    },
+    {
+      "id": "aof-bahar-ara",
+      "baslik": "AÖF bahar dönemi ara sınavı",
+      "kurum": "Anadolu Üniversitesi",
+      "kategori": "aof",
+      "ogrenim": [
+        "onlisans",
+        "lisans"
+      ],
+      "baslangic": "2027-04-10",
+      "bitis": "2027-04-11",
+      "tekrar": "yillik",
+      "kaynak_url": "https://www.anadolu.edu.tr/acikogretim/acikogretim-akademik-takvim/turkiye-programlari-2026-2027-ogretim-yili-akademik-takvim",
+      "kontrol_tarihi": "2026-11-28",
+      "dogrulandi": true,
+      "notlar": "AÖF bahar dönemi ara sınavı 10-11 Nisan 2027. Sınav giriş belgesi ve sınav yeri öğrenci bilgi sisteminden alınır. Anadolu Üniversitesi 2026-2027 Türkiye programları akademik takviminden doğrulandı (2026-11-28).",
+      "belgeler": []
+    },
+    {
+      "id": "aof-sinav-merkezi-bahar-donem-sonu",
+      "baslik": "AÖF bahar dönem sonu sınav merkezi tercihi son günü",
+      "kurum": "Anadolu Üniversitesi",
+      "kategori": "aof",
+      "ogrenim": [
+        "onlisans",
+        "lisans"
+      ],
+      "baslangic": "2027-04-11",
+      "bitis": null,
+      "tekrar": "yillik",
+      "kaynak_url": "https://www.anadolu.edu.tr/acikogretim/acikogretim-akademik-takvim/turkiye-programlari-2026-2027-ogretim-yili-akademik-takvim",
+      "kontrol_tarihi": "2026-11-28",
+      "dogrulandi": true,
+      "notlar": "Bu tarihe kadar sınav merkezi tercihi yapanlar bahar dönemi dönem sonu sınavına (29-30 Mayıs 2027) seçtikleri merkezde girebilir. Anadolu Üniversitesi 2026-2027 Türkiye programları akademik takviminden doğrulandı (2026-11-28).",
+      "belgeler": []
+    },
+    {
+      "id": "aof-bahar-donem-sonu",
+      "baslik": "AÖF bahar dönem sonu sınavı",
+      "kurum": "Anadolu Üniversitesi",
+      "kategori": "aof",
+      "ogrenim": [
+        "onlisans",
+        "lisans"
+      ],
+      "baslangic": "2027-05-29",
+      "bitis": "2027-05-30",
+      "tekrar": "yillik",
+      "kaynak_url": "https://www.anadolu.edu.tr/acikogretim/acikogretim-akademik-takvim/turkiye-programlari-2026-2027-ogretim-yili-akademik-takvim",
+      "kontrol_tarihi": "2026-11-28",
+      "dogrulandi": true,
+      "notlar": "AÖF bahar dönemi dönem sonu sınavı 29-30 Mayıs 2027. Anadolu Üniversitesi 2026-2027 Türkiye programları akademik takviminden doğrulandı (2026-11-28).",
       "belgeler": []
     },
     {
