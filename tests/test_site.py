@@ -56,4 +56,6 @@ class SiteTest(unittest.TestCase):
         self.assertIn(b"DTEND;VALUE=DATE:20290101\r\n", takvim_ics({**veri, "entries": [kayit]}))
 
     def test_yayin_boyutu(self):
-        self.assertLess(sum(dosya.stat().st_size for dosya in DOCS.iterdir() if dosya.is_file()), 60_000)
+        # takvim.ics yalnızca abonelik/indirme için; sayfa açılışında ve önbellekte yüklenmez.
+        acilis = [d for d in DOCS.iterdir() if d.is_file() and d.suffix != ".ics"]
+        self.assertLess(sum(dosya.stat().st_size for dosya in acilis), 60_000)

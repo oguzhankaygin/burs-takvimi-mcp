@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-27",
+  "updated": "2026-11-28",
   "entries": [
     {
       "id": "kyk-burs-kredi",
@@ -100,10 +100,28 @@
       "baslangic": "2026-12-05",
       "bitis": "2026-12-06",
       "tekrar": "yillik",
-      "kaynak_url": "https://aof.anadolu.edu.tr/",
-      "kontrol_tarihi": "2026-11-24",
-      "dogrulandi": false,
-      "notlar": "AÖF güz ara sınavı. Araştırma bulgusu (2026-11-24); resmi duyurudan henüz doğrulanmadı.",
+      "kaynak_url": "https://www.anadolu.edu.tr/acikogretim/acikogretim-akademik-takvim/turkiye-programlari-2026-2027-ogretim-yili-akademik-takvim",
+      "kontrol_tarihi": "2026-11-28",
+      "dogrulandi": true,
+      "notlar": "AÖF güz dönemi ara sınavı 5-6 Aralık 2026. Anadolu Üniversitesi 2026-2027 Türkiye programları akademik takviminden doğrulandı (2026-11-28). Sınav giriş belgesi ve sınav yeri öğrenci bilgi sisteminden alınır.",
+      "belgeler": []
+    },
+    {
+      "id": "aof-sinav-merkezi-donem-sonu",
+      "baslik": "AÖF dönem sonu sınav merkezi tercihi son günü",
+      "kurum": "Anadolu Üniversitesi",
+      "kategori": "aof",
+      "ogrenim": [
+        "onlisans",
+        "lisans"
+      ],
+      "baslangic": "2026-12-06",
+      "bitis": null,
+      "tekrar": "yillik",
+      "kaynak_url": "https://www.anadolu.edu.tr/acikogretim/acikogretim-akademik-takvim/turkiye-programlari-2026-2027-ogretim-yili-akademik-takvim",
+      "kontrol_tarihi": "2026-11-28",
+      "dogrulandi": true,
+      "notlar": "Bu tarihe kadar sınav merkezi tercihi yapanlar güz dönemi dönem sonu sınavına (16-17 Ocak 2027) seçtikleri merkezde girebilir. Akademik takvimden doğrulandı (2026-11-28).",
       "belgeler": []
     },
     {
@@ -152,11 +170,11 @@
       ],
       "baslangic": "2027-01-16",
       "bitis": "2027-01-17",
-      "kaynak_url": "https://aof.anadolu.edu.tr/",
-      "notlar": "Araştırma bulgusu (2026-11-24); resmi duyurudan henüz doğrulanmadı.",
+      "kaynak_url": "https://www.anadolu.edu.tr/acikogretim/acikogretim-akademik-takvim/turkiye-programlari-2026-2027-ogretim-yili-akademik-takvim",
+      "notlar": "AÖF güz dönemi dönem sonu sınavı 16-17 Ocak 2027. Anadolu Üniversitesi 2026-2027 Türkiye programları akademik takviminden doğrulandı (2026-11-28).",
       "tekrar": "yillik",
-      "kontrol_tarihi": "2026-11-24",
-      "dogrulandi": false,
+      "kontrol_tarihi": "2026-11-28",
+      "dogrulandi": true,
       "belgeler": []
     },
     {

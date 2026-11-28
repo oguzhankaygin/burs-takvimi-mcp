@@ -4,7 +4,7 @@ PRODID:-//Burs Takvimi//TR
 CALSCALE:GREGORIAN
 BEGIN:VEVENT
 UID:kyk-burs-kredi@burs-takvimi
-DTSTAMP:20261127T000000Z
+DTSTAMP:20261128T000000Z
 DTSTART;VALUE=DATE:20261012
 DTEND;VALUE=DATE:20261017
 SUMMARY:⚠ KYK burs ve öğrenim kredisi başvurusu
@@ -21,7 +21,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:vgm-burs@burs-takvimi
-DTSTAMP:20261127T000000Z
+DTSTAMP:20261128T000000Z
 DTSTART;VALUE=DATE:20261022
 DTEND;VALUE=DATE:20261101
 SUMMARY:⚠ VGM yükseköğrenim bursu başvurusu
@@ -37,7 +37,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:osym-yks@burs-takvimi
-DTSTAMP:20261127T000000Z
+DTSTAMP:20261128T000000Z
 DTSTART;VALUE=DATE:20270204
 DTEND;VALUE=DATE:20270303
 SUMMARY:YKS başvurusu
@@ -55,7 +55,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:osym-dgs@burs-takvimi
-DTSTAMP:20261127T000000Z
+DTSTAMP:20261128T000000Z
 DTSTART;VALUE=DATE:20270526
 DTEND;VALUE=DATE:20270604
 SUMMARY:DGS başvurusu
@@ -74,39 +74,65 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:aof-sinav@burs-takvimi
-DTSTAMP:20261127T000000Z
+DTSTAMP:20261128T000000Z
 DTSTART;VALUE=DATE:20261205
 DTEND;VALUE=DATE:20261207
-SUMMARY:⚠ AÖF dönem sınavı
-DESCRIPTION:AÖF güz ara sınavı. Araştırma bulgusu (2026-11-24)\; resm
- i duyurudan henüz doğrulanmadı.\nKaynak: https://aof.anadolu.edu.tr/\nT
- arihleri resmi kaynaktan kontrol edin.
-URL:https://aof.anadolu.edu.tr/
+SUMMARY:AÖF dönem sınavı
+DESCRIPTION:AÖF güz dönemi ara sınavı 5-6 Aralık 2026. Anadolu Ünive
+ rsitesi 2026-2027 Türkiye programları akademik takviminden doğrulandı 
+ (2026-11-28). Sınav giriş belgesi ve sınav yeri öğrenci bilgi sistemi
+ nden alınır.\nKaynak: https://www.anadolu.edu.tr/acikogretim/acikogretim
+ -akademik-takvim/turkiye-programlari-2026-2027-ogretim-yili-akademik-takvi
+ m\nTarihleri resmi kaynaktan kontrol edin.
+URL:https://www.anadolu.edu.tr/acikogretim/acikogretim-akademik-takvim/turk
+ iye-programlari-2026-2027-ogretim-yili-akademik-takvim
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER;RELATED=END:-P4D
-DESCRIPTION:⚠ AÖF dönem sınavı
+DESCRIPTION:AÖF dönem sınavı
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aof-sinav-merkezi-donem-sonu@burs-takvimi
+DTSTAMP:20261128T000000Z
+DTSTART;VALUE=DATE:20261206
+DTEND;VALUE=DATE:20261207
+SUMMARY:AÖF dönem sonu sınav merkezi tercihi son günü
+DESCRIPTION:Bu tarihe kadar sınav merkezi tercihi yapanlar güz dönemi d
+ önem sonu sınavına (16-17 Ocak 2027) seçtikleri merkezde girebilir. Ak
+ ademik takvimden doğrulandı (2026-11-28).\nKaynak: https://www.anadolu.e
+ du.tr/acikogretim/acikogretim-akademik-takvim/turkiye-programlari-2026-202
+ 7-ogretim-yili-akademik-takvim\nTarihleri resmi kaynaktan kontrol edin.
+URL:https://www.anadolu.edu.tr/acikogretim/acikogretim-akademik-takvim/turk
+ iye-programlari-2026-2027-ogretim-yili-akademik-takvim
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER;RELATED=END:-P4D
+DESCRIPTION:AÖF dönem sonu sınav merkezi tercihi son günü
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:aof-donem-sonu@burs-takvimi
-DTSTAMP:20261127T000000Z
+DTSTAMP:20261128T000000Z
 DTSTART;VALUE=DATE:20270116
 DTEND;VALUE=DATE:20270118
-SUMMARY:⚠ AÖF güz dönem sonu sınavı
-DESCRIPTION:Araştırma bulgusu (2026-11-24)\; resmi duyurudan henüz doğr
- ulanmadı.\nKaynak: https://aof.anadolu.edu.tr/\nTarihleri resmi kaynaktan
-  kontrol edin.
-URL:https://aof.anadolu.edu.tr/
+SUMMARY:AÖF güz dönem sonu sınavı
+DESCRIPTION:AÖF güz dönemi dönem sonu sınavı 16-17 Ocak 2027. Anadolu
+  Üniversitesi 2026-2027 Türkiye programları akademik takviminden doğru
+ landı (2026-11-28).\nKaynak: https://www.anadolu.edu.tr/acikogretim/aciko
+ gretim-akademik-takvim/turkiye-programlari-2026-2027-ogretim-yili-akademik
+ -takvim\nTarihleri resmi kaynaktan kontrol edin.
+URL:https://www.anadolu.edu.tr/acikogretim/acikogretim-akademik-takvim/turk
+ iye-programlari-2026-2027-ogretim-yili-akademik-takvim
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER;RELATED=END:-P4D
-DESCRIPTION:⚠ AÖF güz dönem sonu sınavı
+DESCRIPTION:AÖF güz dönem sonu sınavı
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:osym-yks-sinav@burs-takvimi
-DTSTAMP:20261127T000000Z
+DTSTAMP:20261128T000000Z
 DTSTART;VALUE=DATE:20270619
 DTEND;VALUE=DATE:20270621
 SUMMARY:2027 YKS sınavı (TYT/AYT/YDT)
@@ -124,7 +150,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:osym-dgs-sinav@burs-takvimi
-DTSTAMP:20261127T000000Z
+DTSTAMP:20261128T000000Z
 DTSTART;VALUE=DATE:20270718
 DTEND;VALUE=DATE:20270719
 SUMMARY:2027 DGS sınavı
@@ -142,7 +168,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:osym-yokdil-1@burs-takvimi
-DTSTAMP:20261127T000000Z
+DTSTAMP:20261128T000000Z
 DTSTART;VALUE=DATE:20270228
 DTEND;VALUE=DATE:20270301
 SUMMARY:2027 YÖKDİL/1 sınavı
@@ -160,7 +186,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:osym-yds-1@burs-takvimi
-DTSTAMP:20261127T000000Z
+DTSTAMP:20261128T000000Z
 DTSTART;VALUE=DATE:20270328
 DTEND;VALUE=DATE:20270329
 SUMMARY:2027 YDS/1 sınavı
@@ -179,7 +205,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:osym-ales-1@burs-takvimi
-DTSTAMP:20261127T000000Z
+DTSTAMP:20261128T000000Z
 DTSTART;VALUE=DATE:20270418
 DTEND;VALUE=DATE:20270419
 SUMMARY:2027 ALES/1 sınavı
@@ -198,7 +224,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:ulusal-staj-programi@burs-takvimi
-DTSTAMP:20261127T000000Z
+DTSTAMP:20261128T000000Z
 DTSTART;VALUE=DATE:20261026
 DTEND;VALUE=DATE:20261215
 SUMMARY:Ulusal Staj Programı öğrenci başvurusu (2027 dönemi)
@@ -217,7 +243,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:tubitak-2209-a@burs-takvimi
-DTSTAMP:20261127T000000Z
+DTSTAMP:20261128T000000Z
 DTSTART;VALUE=DATE:20261007
 DTEND;VALUE=DATE:20261112
 SUMMARY:TÜBİTAK 2209-A Üniversite Öğrencileri Araştırma Projeleri ç
